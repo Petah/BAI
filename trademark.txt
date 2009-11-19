@@ -1,0 +1,38 @@
+[01:58:10] <Charlie[NZ]> would it be possible for an AI to take over control for me without other noticing?
+[01:58:22] ? <Charlie[NZ]> would be good AI testing if it is
+[01:59:27] ? <[SiC][2Lt]tizbac> it is possible but it's broken atm
+[01:59:34] ? <[SiC][2Lt]tizbac> and needs cheats
+[02:00:07] ? <Charlie[NZ]> but would anyone be able to notice
+[02:00:14] ? <Charlie[NZ]> like is there a message or anything
+[02:00:21] ? <[SiC][2Lt]tizbac> i think yes
+[02:00:32] ? <Charlie[NZ]> cool
+[02:00:40] ? <Charlie[NZ]> cause my AI atm will already pwn most noobs
+[02:00:48] ? <Charlie[NZ]> and even some average players
+[02:01:01] ? <Charlie[NZ]> it even beat me some times :O
+[02:02:08] ? <[0_0]dizekat> does it cheat to do that?
+[02:02:26] ? <TradeMark> could someone make speedmetal AI for me, just for lulz
+[02:02:39] ? <TradeMark> its really easy to beat people with just simple AI...
+[02:03:03] ? <Charlie[NZ]> no it doesnt cheat
+[02:03:21] ? <Charlie[NZ]> well unless you set it to very hard (map cheat) or impossible (all cheats)
+[02:03:42] ? <Charlie[NZ]> TradeMark yea i can do that if you want
+[02:03:51] ? <[SiC][2Lt]tizbac> are you the author of these bots that joins autohost?
+[02:04:01] ? <Charlie[NZ]> already have the ai made, i just need to implement specific tasks for speed metal type maps
+[02:04:09] ? <Charlie[NZ]> no im not
+[02:05:47] ? <TradeMark> [SiC][2Lt]tizbac, i dont think they are bots
+[02:05:52] ? <TradeMark> look their mouse cursors are movin
+[02:05:58] ? <[SiC][2Lt]tizbac> hmm
+[02:06:05] ? <Charlie[NZ]> TradeMark what tatic would you prefer tho, fast spams (zippers crawling bombs etc), air, t3, nuke spam?
+[02:06:11] ? <[SiC][2Lt]tizbac> but they don't even reply
+[02:06:18] ? <Charlie[NZ]> they may not be english
+[02:06:32] ? <TradeMark> Charlie[NZ], on my host those units are disabled
+[02:06:44] ? <TradeMark> so its all about zeus spam and banthas and t3 arty
+[02:06:52] ? <[SiC][2Lt]tizbac> and why they are so idiot that they start alla at the same point of last one that set a start point?
+[02:06:59] ? <Charlie[NZ]> arm t3?
+[02:07:05] ? <TradeMark> yeah arm t3
+[02:07:15] ? <Charlie[NZ]> ok i will work on that
+[02:07:15] ? <TradeMark> [SiC][2Lt]tizbac, i think they are just stupid noobs xD
+[02:07:26] ? <Charlie[NZ]> gimme a few days and ill get back to yah
+[02:07:29] ? <TradeMark> Charlie[NZ], i can give you replay you can copy my tactic from
+[02:07:33] ? <Charlie[NZ]> ok
+[02:07:42] ? <Charlie[NZ]> just upload it to adune and gimme the link
+[02:08:27] ? <TradeMark> http://replays.adune.nl/?1700

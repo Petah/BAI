@@ -1,0 +1,1278 @@
+
+<object type="java.util.TreeMap" id="0">
+    <field name="root">
+        <object type="java.util.TreeMap$Entry" id="1">
+            <field name="key">
+                <object type="string" value="gui" id="2" />
+            </field>
+            <field name="value">
+                <object type="org.petah.common.option.Option" id="3">
+                    <field name="name" type="string" value="gui" />
+                    <field name="value">
+                        <object type="boolean" value="true" id="4" />
+                    </field>
+                </object>
+            </field>
+            <field name="left">
+                <object type="java.util.TreeMap$Entry" id="5">
+                    <field name="key">
+                        <object type="string" value="controlResetTime" id="6" />
+                    </field>
+                    <field name="value">
+                        <object type="org.petah.common.option.Option" id="7">
+                            <field name="name" type="string" value="controlResetTime" />
+                            <field name="value">
+                                <object type="int" value="75" id="8" />
+                            </field>
+                        </object>
+                    </field>
+                    <field name="left">
+                        <object type="java.util.TreeMap$Entry" id="9">
+                            <field name="key">
+                                <object type="string" value="commandTimeout" id="10" />
+                            </field>
+                            <field name="value">
+                                <object type="org.petah.common.option.Option" id="11">
+                                    <field name="name" type="string" value="commandTimeout" />
+                                    <field name="value">
+                                        <object type="int" value="3000" id="12" />
+                                    </field>
+                                </object>
+                            </field>
+                            <field name="left">
+                                <object type="java.util.TreeMap$Entry" id="13">
+                                    <field name="key">
+                                        <object type="string" value="bomberUpdateTime" id="14" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="15">
+                                            <field name="name" type="string" value="bomberUpdateTime" />
+                                            <field name="value">
+                                                <object type="int" value="300" id="16" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="17">
+                                            <field name="key">
+                                                <object type="string" value="antiAlias" id="18" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="19">
+                                                    <field name="name" type="string" value="antiAlias" />
+                                                    <field name="value">
+                                                        <object idref="4" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object type="java.util.TreeMap$Entry" id="20">
+                                                    <field name="key">
+                                                        <object type="string" value="aiDirectory" id="21" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="22">
+                                                            <field name="name" type="string" value="aiDirectory" />
+                                                            <field name="value">
+                                                                <object type="java.io.File" id="23">
+                                                                    <field name="fs">
+                                                                        <object type="java.io.WinNTFileSystem" id="24">
+                                                                            <field name="driveDirCache">
+                                                                                <object type="array" elementType="string" length="26" id="25">
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object />
+                                                                                    <object /></object>
+                                                                            </field>
+                                                                            <field name="cache">
+                                                                                <object type="java.io.ExpiringCache" id="26">
+                                                                                    <field name="millisUntilExpiration" type="long" value="30000" />
+                                                                                    <field name="map">
+                                                                                        <object type="map" id="27">
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\bin\zip.dll" id="28" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="29">
+                                                                                                    <field name="timestamp" type="long" value="1254984544126" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\bin\zip.dll" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext" id="30" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="31">
+                                                                                                    <field name="timestamp" type="long" value="1254984544163" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\dnsns.jar" id="32" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="33">
+                                                                                                    <field name="timestamp" type="long" value="1254984544169" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\dnsns.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\j3dcore.jar" id="34" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="35">
+                                                                                                    <field name="timestamp" type="long" value="1254984544171" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\j3dcore.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\j3dutils.jar" id="36" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="37">
+                                                                                                    <field name="timestamp" type="long" value="1254984544172" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\j3dutils.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\localedata.jar" id="38" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="39">
+                                                                                                    <field name="timestamp" type="long" value="1254984544172" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\localedata.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\sunjce_provider.jar" id="40" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="41">
+                                                                                                    <field name="timestamp" type="long" value="1254984544173" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\sunjce_provider.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\sunmscapi.jar" id="42" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="43">
+                                                                                                    <field name="timestamp" type="long" value="1254984544173" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\sunmscapi.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\sunpkcs11.jar" id="44" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="45">
+                                                                                                    <field name="timestamp" type="long" value="1254984544174" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\sunpkcs11.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\vecmath.jar" id="46" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="47">
+                                                                                                    <field name="timestamp" type="long" value="1254984544174" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext\vecmath.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\org.petah.common\dist\org.petah.common.jar" id="48" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="49">
+                                                                                                    <field name="timestamp" type="long" value="1254984544176" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\org.petah.common\dist\org.petah.common.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\librarys\woxJavaBin\lib\jdom.jar" id="50" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="51">
+                                                                                                    <field name="timestamp" type="long" value="1254984544190" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\librarys\woxJavaBin\lib\jdom.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\AIInterface.jar" id="52" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="53">
+                                                                                                    <field name="timestamp" type="long" value="1254984544192" />
+                                                                                                    <field name="val" type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\AIInterface.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib\AIInterface-src.jar" id="54" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="55">
+                                                                                                    <field name="timestamp" type="long" value="1254984544193" />
+                                                                                                    <field name="val" type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib\AIInterface-src.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib\jna.jar" id="56" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="57">
+                                                                                                    <field name="timestamp" type="long" value="1254984544194" />
+                                                                                                    <field name="val" type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib\jna.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib\vecmath.jar" id="58" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="59">
+                                                                                                    <field name="timestamp" type="long" value="1254984544194" />
+                                                                                                    <field name="val" type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib\vecmath.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\BAI\build\classes" id="60" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="61">
+                                                                                                    <field name="timestamp" type="long" value="1254984544196" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\BAI\build\classes" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\NetBeans 6.7\java2\modules\ext\junit-3.8.2.jar" id="62" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="63">
+                                                                                                    <field name="timestamp" type="long" value="1254984544197" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\NetBeans 6.7\java2\modules\ext\junit-3.8.2.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\NetBeans 6.7\platform10\modules\ext\junit-4.5.jar" id="64" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="65">
+                                                                                                    <field name="timestamp" type="long" value="1254984544199" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\NetBeans 6.7\platform10\modules\ext\junit-4.5.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\BAI\build\test\classes" id="66" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="67">
+                                                                                                    <field name="timestamp" type="long" value="1254984544204" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\BAI\build\test\classes" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\BAI\build\test\classes\-" id="68" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="69">
+                                                                                                    <field name="timestamp" type="long" value="1254984544416" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\BAI\build\test\classes\-" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\BAI\build\classes\-" id="70" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="71">
+                                                                                                    <field name="timestamp" type="long" value="1254984544432" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\BAI\build\classes\-" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\logging.properties" id="72" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="73">
+                                                                                                    <field name="timestamp" type="long" value="1254984544456" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\logging.properties" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib" id="74" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="75">
+                                                                                                    <field name="timestamp" type="long" value="1254984544475" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\resources.jar" id="76" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="77">
+                                                                                                    <field name="timestamp" type="long" value="1254984544477" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\resources.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\rt.jar" id="78" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="79">
+                                                                                                    <field name="timestamp" type="long" value="1254984544477" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\rt.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\sunrsasign.jar" id="80" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="81">
+                                                                                                    <field name="timestamp" type="long" value="1254984544478" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\sunrsasign.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\jsse.jar" id="82" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="83">
+                                                                                                    <field name="timestamp" type="long" value="1254984544478" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\jsse.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\jce.jar" id="84" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="85">
+                                                                                                    <field name="timestamp" type="long" value="1254984544478" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\jce.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\charsets.jar" id="86" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="87">
+                                                                                                    <field name="timestamp" type="long" value="1254984544479" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\charsets.jar" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\classes" id="88" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="89">
+                                                                                                    <field name="timestamp" type="long" value="1254984544480" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\classes" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\bin\awt.dll" id="90" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="91">
+                                                                                                    <field name="timestamp" type="long" value="1254984544515" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\bin\awt.dll" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                        </object>
+                                                                                    </field>
+                                                                                    <field name="queryCount" type="int" value="71" />
+                                                                                    <field name="queryOverflow" type="int" value="300" />
+                                                                                    <field name="MAX_ENTRIES" type="int" value="200" />
+                                                                                </object>
+                                                                            </field>
+                                                                            <field name="prefixCache">
+                                                                                <object type="java.io.ExpiringCache" id="92">
+                                                                                    <field name="millisUntilExpiration" type="long" value="30000" />
+                                                                                    <field name="map">
+                                                                                        <object type="map" id="93">
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\bin" id="94" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="95">
+                                                                                                    <field name="timestamp" type="long" value="1254984544127" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\bin" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object idref="30" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="96">
+                                                                                                    <field name="timestamp" type="long" value="1254984544170" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib\ext" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\org.petah.common\dist" id="97" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="98">
+                                                                                                    <field name="timestamp" type="long" value="1254984544184" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\org.petah.common\dist" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Programming\Java\librarys\woxJavaBin\lib" id="99" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="100">
+                                                                                                    <field name="timestamp" type="long" value="1254984544190" />
+                                                                                                    <field name="val" type="string" value="G:\Programming\Java\librarys\woxJavaBin\lib" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1" id="101" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="102">
+                                                                                                    <field name="timestamp" type="long" value="1254984544192" />
+                                                                                                    <field name="val" type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib" id="103" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="104">
+                                                                                                    <field name="timestamp" type="long" value="1254984544194" />
+                                                                                                    <field name="val" type="string" value="G:\Games\SpringTest\AI\Interfaces\Java\0.1\jlib" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\NetBeans 6.7\java2\modules\ext" id="105" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="106">
+                                                                                                    <field name="timestamp" type="long" value="1254984544197" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\NetBeans 6.7\java2\modules\ext" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object type="string" value="C:\Program Files\NetBeans 6.7\platform10\modules\ext" id="107" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="108">
+                                                                                                    <field name="timestamp" type="long" value="1254984544199" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\NetBeans 6.7\platform10\modules\ext" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                            <object type="entry">
+                                                                                                <object idref="74" />
+                                                                                                <object type="java.io.ExpiringCache$Entry" id="109">
+                                                                                                    <field name="timestamp" type="long" value="1254984544457" />
+                                                                                                    <field name="val" type="string" value="C:\Program Files\Java\jdk1.6.0_13\jre\lib" />
+                                                                                                </object>
+                                                                                            </object>
+                                                                                        </object>
+                                                                                    </field>
+                                                                                    <field name="queryCount" type="int" value="39" />
+                                                                                    <field name="queryOverflow" type="int" value="300" />
+                                                                                    <field name="MAX_ENTRIES" type="int" value="200" />
+                                                                                </object>
+                                                                            </field>
+                                                                            <field name="useCanonCaches" type="boolean" value="true" />
+                                                                            <field name="useCanonPrefixCache" type="boolean" value="true" />
+                                                                        </object>
+                                                                    </field>
+                                                                    <field name="path" type="string" value="G:\Programming\Java\BAI\build\classes" />
+                                                                    <field name="prefixLength" type="int" value="3" />
+                                                                </object>
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="17" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="13" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object type="java.util.TreeMap$Entry" id="110">
+                                            <field name="key">
+                                                <object type="string" value="builderUpdateTime" id="111" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="112">
+                                                    <field name="name" type="string" value="builderUpdateTime" />
+                                                    <field name="value">
+                                                        <object type="int" value="20" id="113" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="13" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="9" />
+                                    </field>
+                                    <field name="color" type="boolean" value="false" />
+                                </object>
+                            </field>
+                            <field name="right">
+                                <object type="java.util.TreeMap$Entry" id="114">
+                                    <field name="key">
+                                        <object type="string" value="controlMapUpdateTime" id="115" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="116">
+                                            <field name="name" type="string" value="controlMapUpdateTime" />
+                                            <field name="value">
+                                                <object type="int" value="40" id="117" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object />
+                                    </field>
+                                    <field name="right">
+                                        <object />
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="9" />
+                                    </field>
+                                    <field name="color" type="boolean" value="true" />
+                                </object>
+                            </field>
+                            <field name="parent">
+                                <object idref="5" />
+                            </field>
+                            <field name="color" type="boolean" value="true" />
+                        </object>
+                    </field>
+                    <field name="right">
+                        <object type="java.util.TreeMap$Entry" id="118">
+                            <field name="key">
+                                <object type="string" value="controlZoneSize" id="119" />
+                            </field>
+                            <field name="value">
+                                <object type="org.petah.common.option.Option" id="120">
+                                    <field name="name" type="string" value="controlZoneSize" />
+                                    <field name="value">
+                                        <object type="int" value="128" id="121" />
+                                    </field>
+                                </object>
+                            </field>
+                            <field name="left">
+                                <object type="java.util.TreeMap$Entry" id="122">
+                                    <field name="key">
+                                        <object type="string" value="controlZoneRenderMaxPower" id="123" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="124">
+                                            <field name="name" type="string" value="controlZoneRenderMaxPower" />
+                                            <field name="value">
+                                                <object type="float" value="1000.0" id="125" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="126">
+                                            <field name="key">
+                                                <object type="string" value="controlZoneRenderFont" id="127" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="128">
+                                                    <field name="name" type="string" value="controlZoneRenderFont" />
+                                                    <field name="value">
+                                                        <object type="java.awt.Font" id="129">
+                                                            <field name="fRequestedAttributes">
+                                                                <object />
+                                                            </field>
+                                                            <field name="name" type="string" value="Arial" />
+                                                            <field name="style" type="int" value="1" />
+                                                            <field name="size" type="int" value="12" />
+                                                            <field name="pointSize" type="float" value="12.0" />
+                                                            <field name="peer">
+                                                                <object />
+                                                            </field>
+                                                            <field name="pData" type="long" value="0" />
+                                                            <field name="font2DHandle">
+                                                                <object />
+                                                            </field>
+                                                            <field name="values">
+                                                                <object />
+                                                            </field>
+                                                            <field name="hasLayoutAttributes" type="boolean" value="false" />
+                                                            <field name="createdFont" type="boolean" value="false" />
+                                                            <field name="nonIdentityTx" type="boolean" value="false" />
+                                                            <field name="hash" type="int" value="63529070" />
+                                                            <field name="fontSerializedDataVersion" type="int" value="1" />
+                                                            <field name="flmref">
+                                                                <object />
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="122" />
+                                            </field>
+                                            <field name="color" type="boolean" value="false" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object />
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="118" />
+                                    </field>
+                                    <field name="color" type="boolean" value="true" />
+                                </object>
+                            </field>
+                            <field name="right">
+                                <object type="java.util.TreeMap$Entry" id="130">
+                                    <field name="key">
+                                        <object type="string" value="defenceUpdateTime" id="131" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="132">
+                                            <field name="name" type="string" value="defenceUpdateTime" />
+                                            <field name="value">
+                                                <object idref="113" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="133">
+                                            <field name="key">
+                                                <object type="string" value="debug" id="134" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="135">
+                                                    <field name="name" type="string" value="debug" />
+                                                    <field name="value">
+                                                        <object idref="4" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="130" />
+                                            </field>
+                                            <field name="color" type="boolean" value="false" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object type="java.util.TreeMap$Entry" id="136">
+                                            <field name="key">
+                                                <object type="string" value="errorLogFile" id="137" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="138">
+                                                    <field name="name" type="string" value="errorLogFile" />
+                                                    <field name="value">
+                                                        <object type="java.io.File" id="139">
+                                                            <field name="fs">
+                                                                <object idref="24" />
+                                                            </field>
+                                                            <field name="path" type="string" value="G:\Programming\Java\BAI\build\classes\logs\errorlog_19-49-04__Oct-8-2009.txt" />
+                                                            <field name="prefixLength" type="int" value="3" />
+                                                        </object>
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="130" />
+                                            </field>
+                                            <field name="color" type="boolean" value="false" />
+                                        </object>
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="118" />
+                                    </field>
+                                    <field name="color" type="boolean" value="true" />
+                                </object>
+                            </field>
+                            <field name="parent">
+                                <object idref="5" />
+                            </field>
+                            <field name="color" type="boolean" value="true" />
+                        </object>
+                    </field>
+                    <field name="parent">
+                        <object idref="1" />
+                    </field>
+                    <field name="color" type="boolean" value="false" />
+                </object>
+            </field>
+            <field name="right">
+                <object type="java.util.TreeMap$Entry" id="140">
+                    <field name="key">
+                        <object type="string" value="profilerMinimumNanos" id="141" />
+                    </field>
+                    <field name="value">
+                        <object type="org.petah.common.option.Option" id="142">
+                            <field name="name" type="string" value="profilerMinimumNanos" />
+                            <field name="value">
+                                <object type="long" value="25000000" id="143" />
+                            </field>
+                        </object>
+                    </field>
+                    <field name="left">
+                        <object type="java.util.TreeMap$Entry" id="144">
+                            <field name="key">
+                                <object type="string" value="logger" id="145" />
+                            </field>
+                            <field name="value">
+                                <object type="org.petah.common.option.Option" id="146">
+                                    <field name="name" type="string" value="logger" />
+                                    <field name="value">
+                                        <object type="java.util.logging.Level" id="147">
+                                            <field name="known">
+                                                <object type="list" elementType="Object" length="9" id="148">
+                                                    <object type="java.util.logging.Level" id="149">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="150">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="151">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="152">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="153">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="154">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="155">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object type="java.util.logging.Level" id="156">
+                                                        <field name="known">
+                                                            <object idref="148" />
+                                                        </field>
+                                                        <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                                    </object>
+                                                    <object idref="147" /></object>
+                                            </field>
+                                            <field name="defaultBundle" type="string" value="sun.util.logging.resources.logging" />
+                                        </object>
+                                    </field>
+                                </object>
+                            </field>
+                            <field name="left">
+                                <object type="java.util.TreeMap$Entry" id="157">
+                                    <field name="key">
+                                        <object type="string" value="logTimeStampFormat" id="158" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="159">
+                                            <field name="name" type="string" value="logTimeStampFormat" />
+                                            <field name="value">
+                                                <object type="string" value="HH-mm-ss__MMM-d-yyyy" id="160" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="161">
+                                            <field name="key">
+                                                <object type="string" value="logDirectory" id="162" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="163">
+                                                    <field name="name" type="string" value="logDirectory" />
+                                                    <field name="value">
+                                                        <object type="java.io.File" id="164">
+                                                            <field name="fs">
+                                                                <object idref="24" />
+                                                            </field>
+                                                            <field name="path" type="string" value="G:\Programming\Java\BAI\build\classes\logs" />
+                                                            <field name="prefixLength" type="int" value="3" />
+                                                        </object>
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object type="java.util.TreeMap$Entry" id="165">
+                                                    <field name="key">
+                                                        <object type="string" value="logArchiveDirectory" id="166" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="167">
+                                                            <field name="name" type="string" value="logArchiveDirectory" />
+                                                            <field name="value">
+                                                                <object type="java.io.File" id="168">
+                                                                    <field name="fs">
+                                                                        <object idref="24" />
+                                                                    </field>
+                                                                    <field name="path" type="string" value="G:\Programming\Java\BAI\build\classes\logs\archive" />
+                                                                    <field name="prefixLength" type="int" value="3" />
+                                                                </object>
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="161" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="157" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object type="java.util.TreeMap$Entry" id="169">
+                                            <field name="key">
+                                                <object type="string" value="logToFile" id="170" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="171">
+                                                    <field name="name" type="string" value="logToFile" />
+                                                    <field name="value">
+                                                        <object idref="4" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="157" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="144" />
+                                    </field>
+                                    <field name="color" type="boolean" value="false" />
+                                </object>
+                            </field>
+                            <field name="right">
+                                <object type="java.util.TreeMap$Entry" id="172">
+                                    <field name="key">
+                                        <object type="string" value="nanoUpdateTime" id="173" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="174">
+                                            <field name="name" type="string" value="nanoUpdateTime" />
+                                            <field name="value">
+                                                <object type="int" value="150" id="175" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="176">
+                                            <field name="key">
+                                                <object type="string" value="metalMakerUpdateTime" id="177" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="178">
+                                                    <field name="name" type="string" value="metalMakerUpdateTime" />
+                                                    <field name="value">
+                                                        <object type="int" value="30" id="179" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="172" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object type="java.util.TreeMap$Entry" id="180">
+                                            <field name="key">
+                                                <object type="string" value="profiler" id="181" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="182">
+                                                    <field name="name" type="string" value="profiler" />
+                                                    <field name="value">
+                                                        <object idref="4" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object type="java.util.TreeMap$Entry" id="183">
+                                                    <field name="key">
+                                                        <object type="string" value="outputLogFile" id="184" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="185">
+                                                            <field name="name" type="string" value="outputLogFile" />
+                                                            <field name="value">
+                                                                <object type="java.io.File" id="186">
+                                                                    <field name="fs">
+                                                                        <object idref="24" />
+                                                                    </field>
+                                                                    <field name="path" type="string" value="G:\Programming\Java\BAI\build\classes\logs\output_19-49-04__Oct-8-2009.txt" />
+                                                                    <field name="prefixLength" type="int" value="3" />
+                                                                </object>
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="180" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="172" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="144" />
+                                    </field>
+                                    <field name="color" type="boolean" value="false" />
+                                </object>
+                            </field>
+                            <field name="parent">
+                                <object idref="140" />
+                            </field>
+                            <field name="color" type="boolean" value="true" />
+                        </object>
+                    </field>
+                    <field name="right">
+                        <object type="java.util.TreeMap$Entry" id="187">
+                            <field name="key">
+                                <object type="string" value="scoutUpdateTime" id="188" />
+                            </field>
+                            <field name="value">
+                                <object type="org.petah.common.option.Option" id="189">
+                                    <field name="name" type="string" value="scoutUpdateTime" />
+                                    <field name="value">
+                                        <object type="int" value="250" id="190" />
+                                    </field>
+                                </object>
+                            </field>
+                            <field name="left">
+                                <object type="java.util.TreeMap$Entry" id="191">
+                                    <field name="key">
+                                        <object type="string" value="resourceEnergyShareLevel" id="192" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="193">
+                                            <field name="name" type="string" value="resourceEnergyShareLevel" />
+                                            <field name="value">
+                                                <object type="int" value="700" id="194" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="195">
+                                            <field name="key">
+                                                <object type="string" value="raidUpdateTime" id="196" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="197">
+                                                    <field name="name" type="string" value="raidUpdateTime" />
+                                                    <field name="value">
+                                                        <object idref="175" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object />
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="191" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object type="java.util.TreeMap$Entry" id="198">
+                                            <field name="key">
+                                                <object type="string" value="resourceUpdateTime" id="199" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="200">
+                                                    <field name="name" type="string" value="resourceUpdateTime" />
+                                                    <field name="value">
+                                                        <object idref="179" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object type="java.util.TreeMap$Entry" id="201">
+                                                    <field name="key">
+                                                        <object type="string" value="resourceMetalShareLevel" id="202" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="203">
+                                                            <field name="name" type="string" value="resourceMetalShareLevel" />
+                                                            <field name="value">
+                                                                <object type="int" value="400" id="204" />
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="198" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="191" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="187" />
+                                    </field>
+                                    <field name="color" type="boolean" value="false" />
+                                </object>
+                            </field>
+                            <field name="right">
+                                <object type="java.util.TreeMap$Entry" id="205">
+                                    <field name="key">
+                                        <object type="string" value="targetZoneMaxSize" id="206" />
+                                    </field>
+                                    <field name="value">
+                                        <object type="org.petah.common.option.Option" id="207">
+                                            <field name="name" type="string" value="targetZoneMaxSize" />
+                                            <field name="value">
+                                                <object type="int" value="1000" id="208" />
+                                            </field>
+                                        </object>
+                                    </field>
+                                    <field name="left">
+                                        <object type="java.util.TreeMap$Entry" id="209">
+                                            <field name="key">
+                                                <object type="string" value="targetMapUpdateTime" id="210" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="211">
+                                                    <field name="name" type="string" value="targetMapUpdateTime" />
+                                                    <field name="value">
+                                                        <object idref="117" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object type="java.util.TreeMap$Entry" id="212">
+                                                    <field name="key">
+                                                        <object type="string" value="settingsDirectory" id="213" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="214">
+                                                            <field name="name" type="string" value="settingsDirectory" />
+                                                            <field name="value">
+                                                                <object type="java.io.File" id="215">
+                                                                    <field name="fs">
+                                                                        <object idref="24" />
+                                                                    </field>
+                                                                    <field name="path" type="string" value="G:\Programming\Java\BAI\build\classes\settings" />
+                                                                    <field name="prefixLength" type="int" value="3" />
+                                                                </object>
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="209" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="right">
+                                                <object />
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="205" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="right">
+                                        <object type="java.util.TreeMap$Entry" id="216">
+                                            <field name="key">
+                                                <object type="string" value="unitManagerUpdateTime" id="217" />
+                                            </field>
+                                            <field name="value">
+                                                <object type="org.petah.common.option.Option" id="218">
+                                                    <field name="name" type="string" value="unitManagerUpdateTime" />
+                                                    <field name="value">
+                                                        <object idref="117" />
+                                                    </field>
+                                                </object>
+                                            </field>
+                                            <field name="left">
+                                                <object type="java.util.TreeMap$Entry" id="219">
+                                                    <field name="key">
+                                                        <object type="string" value="textPaneFont" id="220" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="221">
+                                                            <field name="name" type="string" value="textPaneFont" />
+                                                            <field name="value">
+                                                                <object type="java.awt.Font" id="222">
+                                                                    <field name="fRequestedAttributes">
+                                                                        <object />
+                                                                    </field>
+                                                                    <field name="name" type="string" value="Courier New" />
+                                                                    <field name="style" type="int" value="0" />
+                                                                    <field name="size" type="int" value="10" />
+                                                                    <field name="pointSize" type="float" value="10.0" />
+                                                                    <field name="peer">
+                                                                        <object />
+                                                                    </field>
+                                                                    <field name="pData" type="long" value="0" />
+                                                                    <field name="font2DHandle">
+                                                                        <object />
+                                                                    </field>
+                                                                    <field name="values">
+                                                                        <object />
+                                                                    </field>
+                                                                    <field name="hasLayoutAttributes" type="boolean" value="false" />
+                                                                    <field name="createdFont" type="boolean" value="false" />
+                                                                    <field name="nonIdentityTx" type="boolean" value="false" />
+                                                                    <field name="hash" type="int" value="1314751719" />
+                                                                    <field name="fontSerializedDataVersion" type="int" value="1" />
+                                                                    <field name="flmref">
+                                                                        <object />
+                                                                    </field>
+                                                                </object>
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="216" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="right">
+                                                <object type="java.util.TreeMap$Entry" id="223">
+                                                    <field name="key">
+                                                        <object type="string" value="version" id="224" />
+                                                    </field>
+                                                    <field name="value">
+                                                        <object type="org.petah.common.option.Option" id="225">
+                                                            <field name="name" type="string" value="version" />
+                                                            <field name="value">
+                                                                <object type="string" value="0.1" id="226" />
+                                                            </field>
+                                                        </object>
+                                                    </field>
+                                                    <field name="left">
+                                                        <object />
+                                                    </field>
+                                                    <field name="right">
+                                                        <object />
+                                                    </field>
+                                                    <field name="parent">
+                                                        <object idref="216" />
+                                                    </field>
+                                                    <field name="color" type="boolean" value="false" />
+                                                </object>
+                                            </field>
+                                            <field name="parent">
+                                                <object idref="205" />
+                                            </field>
+                                            <field name="color" type="boolean" value="true" />
+                                        </object>
+                                    </field>
+                                    <field name="parent">
+                                        <object idref="187" />
+                                    </field>
+                                    <field name="color" type="boolean" value="false" />
+                                </object>
+                            </field>
+                            <field name="parent">
+                                <object idref="140" />
+                            </field>
+                            <field name="color" type="boolean" value="true" />
+                        </object>
+                    </field>
+                    <field name="parent">
+                        <object idref="1" />
+                    </field>
+                    <field name="color" type="boolean" value="false" />
+                </object>
+            </field>
+            <field name="parent">
+                <object />
+            </field>
+            <field name="color" type="boolean" value="true" />
+        </object>
+    </field>
+    <field name="size" type="int" value="35" />
+    <field name="modCount" type="int" value="35" />
+    <field name="entrySet">
+        <object type="java.util.TreeMap$EntrySet" id="227" />
+    </field>
+    <field name="navigableKeySet">
+        <object />
+    </field>
+    <field name="descendingMap">
+        <object />
+    </field>
+    <field name="keySet">
+        <object />
+    </field>
+    <field name="values">
+        <object />
+    </field>
+</object>
