@@ -39,11 +39,14 @@ public class BAIFactory extends OOAIFactory {
 
     @Override
     public OOAI createAI(final int teamId, OOAICallback callback) {
+        // Check if this is the first call
         if (!globalInit) {
             globalInit = true;
             init(callback);
         }
+
         Profiler.start(BAIFactory.class, "createAI()");
+
         AIEventHandler eventHandler = new AIEventHandler();
         eventHandler.addAIEventListener(new AIEventAdapter() {
 
@@ -58,21 +61,27 @@ public class BAIFactory extends OOAIFactory {
         });
         AIDelegate delegate = new AIDelegate(teamId, callback, eventHandler);
         aiDelegates.put(teamId, delegate);
+
         Profiler.stop(BAIFactory.class, "createAI()");
+
         return eventHandler;
     }
 
     public static void init(OOAICallback callback) {
         Profiler.start(BAIFactory.class, "init()");
-        // Init global options and information logger
+
+        // Initialise global options and information logger
         GlobalOptions.parseLua(callback);
         InformationLogger.init();
+
         // Parse the resources
         ResourceManager.parseResources(callback);
-        //
+
+        // Initialise other classes in order of dependance
         GlobalDelegate.init(callback); // Dependant on InformationLogger, ResourceManager
         GUIManager.init(); // Dependant on GlobalDelegate
         UnitInfo.init(); // Dependant on CacheManager
+
         Profiler.stop(BAIFactory.class, "init()");
     }
 

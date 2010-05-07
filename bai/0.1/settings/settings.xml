@@ -1,0 +1,183 @@
+<options>
+  <option name="CachedHeightMap.cacheToDisk" type="java.lang.Boolean">
+    <value>false</value>
+  </option>
+  <option name="CachedMap.cacheToDisk" type="java.lang.Boolean">
+    <value>true</value>
+  </option>
+  <option name="CachedMetalMap.cacheToDisk" type="java.lang.Boolean">
+    <value>false</value>
+  </option>
+  <option name="CachedMetalMap.greenFieldsMapMaxMetal" type="java.lang.Integer">
+    <value>1000</value>
+  </option>
+  <option name="CachedMetalMap.metalMapMinAverageMetal" type="java.lang.Integer">
+    <value>60</value>
+  </option>
+  <option name="CachedMoveDataManager.cacheToDisk" type="java.lang.Boolean">
+    <value>false</value>
+  </option>
+  <option name="CachedSlopeMap.cacheToDisk" type="java.lang.Boolean">
+    <value>false</value>
+  </option>
+  <option name="CachedUnit.fastUpdateTime" type="java.lang.Integer">
+    <value>25</value>
+  </option>
+  <option name="CachedUnit.slowUpdateTime" type="java.lang.Integer">
+    <value>25</value>
+  </option>
+  <option name="CachedUnitDefManager.cacheToDisk" type="java.lang.Boolean">
+    <value>false</value>
+  </option>
+  <option name="CommandUtil.commandTimeout" type="java.lang.Integer">
+    <value>3000</value>
+  </option>
+  <option name="ControlMap.unknownUnitPower" type="java.lang.Integer">
+    <value>100</value>
+    <!-- Amount of power to allocate a unit when it is not known (In radar not LOS). -->
+  </option>
+  <option name="ControlMap.updateTime" type="java.lang.Integer">
+    <value>40</value>
+  </option>
+  <option name="ControlMapRenderer.font" type="java.awt.Font">
+    <value>java.awt.Font[family=Arial,name=Arial,style=bold,size=12]</value>
+  </option>
+  <option name="ControlMapRenderer.maxPowerColor" type="java.lang.Float">
+    <value>1000.0</value>
+  </option>
+  <option name="ControlZone.resetTime" type="java.lang.Integer">
+    <value>75</value>
+  </option>
+  <option name="ControlZone.size" type="java.lang.Integer">
+    <value>128</value>
+  </option>
+  <option name="CustomProfileHandler.minNanos" type="java.lang.Long">
+    <value>15000000</value>
+  </option>
+  <option name="DefaultAssult.updateTime" type="java.lang.Integer">
+    <value>150</value>
+  </option>
+  <option name="DefaultBaseBuilderStage1.updateTime" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="DefaultBomber.updateTime" type="java.lang.Integer">
+    <value>300</value>
+  </option>
+  <option name="DefaultCommander.updateTime" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="DefaultDefence.maxDistance" type="java.lang.Integer">
+    <value>3000</value>
+  </option>
+  <option name="DefaultDefence.patrolDistance" type="java.lang.Integer">
+    <value>2000</value>
+  </option>
+  <option name="DefaultDefence.updateTime" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="DefaultExpansionBuilder.updateTime" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="DefaultFactory.maxBuilders" type="java.lang.Integer">
+    <value>4</value>
+  </option>
+  <option name="DefaultFactory.maxScavengers" type="java.lang.Integer">
+    <value>4</value>
+  </option>
+  <option name="DefaultFactory.maxScouts" type="java.lang.Integer">
+    <value>8</value>
+  </option>
+  <option name="DefaultFactory.maxT2Builders" type="java.lang.Integer">
+    <value>6</value>
+  </option>
+  <option name="DefaultFactory.updateTime" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="DefaultFighter.maxDistance" type="java.lang.Integer">
+    <value>5000</value>
+  </option>
+  <option name="DefaultFighter.patrolDistance" type="java.lang.Integer">
+    <value>3000</value>
+  </option>
+  <option name="DefaultFighter.updateTime" type="java.lang.Integer">
+    <value>150</value>
+  </option>
+  <option name="DefaultGroupManager.maxDefenceGroupSize" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="DefaultMetalMaker.updateTime" type="java.lang.Integer">
+    <value>30</value>
+  </option>
+  <option name="DefaultNanoStage1.updateTime" type="java.lang.Integer">
+    <value>150</value>
+  </option>
+  <option name="DefaultRaider.updateTime" type="java.lang.Integer">
+    <value>150</value>
+  </option>
+  <option name="DefaultScavenger.exploreDistance" type="java.lang.Integer">
+    <value>1000</value>
+  </option>
+  <option name="DefaultScavenger.updateTime" type="java.lang.Integer">
+    <value>250</value>
+  </option>
+  <option name="GlobalOptions.antiAlias" type="java.lang.Boolean">
+    <value>true</value>
+    <!-- Enable anti aliasing when drawing images in the GUI -->
+    <!-- Values: true, false -->
+  </option>
+  <option name="GlobalOptions.debug" type="java.lang.Boolean">
+    <value>true</value>
+    <!-- Enable debug mode -->
+    <!-- Values: true, false -->
+  </option>
+  <option name="GlobalOptions.guiEnabled" type="java.lang.Boolean">
+    <value>true</value>
+    <!-- Enable GUI window -->
+    <!-- Values: true, false -->
+  </option>
+  <option name="InformationLogger.logToFile" type="java.lang.Boolean">
+    <value>true</value>
+  </option>
+  <option name="InformationLogger.loggerLevel" type="java.util.logging.Level">
+    <value>ALL</value>
+  </option>
+  <option name="InformationLogger.profilerEnabled" type="java.lang.Boolean">
+    <value>true</value>
+  </option>
+  <option name="InformationLogger.timeStampFormat" type="java.lang.String">
+    <value>HH-mm-ss__MMM-d-yyyy</value>
+  </option>
+  <option name="MoveFailHandler.moveDistance" type="java.lang.Integer">
+    <value>100</value>
+  </option>
+  <option name="PConsole.font" type="java.awt.Font">
+    <value>java.awt.Font[family=Courier New,name=Courier New,style=plain,size=10]</value>
+  </option>
+  <option name="PUnitList.font" type="java.awt.Font">
+    <value>java.awt.Font[family=Courier New,name=Courier New,style=plain,size=10]</value>
+  </option>
+  <option name="ResourceManager.energyShareLevel" type="java.lang.Float">
+    <value>0.7</value>
+  </option>
+  <option name="ResourceManager.metalShareLevel" type="java.lang.Float">
+    <value>0.4</value>
+  </option>
+  <option name="ResourceManager.updateTime" type="java.lang.Integer">
+    <value>30</value>
+  </option>
+  <option name="TargetMap.maxDistance" type="java.lang.Integer">
+    <value>1000</value>
+  </option>
+  <option name="TargetMap.updateTime" type="java.lang.Integer">
+    <value>40</value>
+  </option>
+  <option name="TargetZone.maxSize" type="java.lang.Integer">
+    <value>1000</value>
+  </option>
+  <option name="metalSpotJiggleAmount" type="java.lang.Integer">
+    <value>20</value>
+  </option>
+  <option name="metalSpotSpacingFactor" type="java.lang.Float">
+    <value>0.4</value>
+  </option>
+</options>

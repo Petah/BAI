@@ -4,14 +4,14 @@
  */
 package org.petah.spring.bai.unit;
 
+import java.io.File;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import org.petah.spring.bai.InformationLogger;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -22,18 +22,17 @@ import org.xml.sax.helpers.DefaultHandler;
  */
 public class ConfigReader extends DefaultHandler {
 
-    private URI file;
+    private File file;
     private UnitInfo unitInfo;
 
     public ConfigReader() {
-        try {
-            file = getClass().getClassLoader().getResource("org/petah/spring/bai/config/default.unit.xml").toURI();
-        } catch (URISyntaxException ex) {
-            Logger.getLogger(ConfigReader.class.getName()).log(Level.SEVERE, null, ex);
+        file = new File(InformationLogger.getSettingsDirectory().getAbsolutePath() + File.separator + "default.unit.xml");
+        if (!file.isFile()) {
+            throw new RuntimeException(file.getAbsoluteFile() + " does not exist");
         }
     }
 
-    public ConfigReader(URI file) {
+    public ConfigReader(File file) {
         this.file = file;
     }
 
@@ -65,10 +64,6 @@ public class ConfigReader extends DefaultHandler {
         } else if (unitInfo != null) {
             unitInfo.addType(getUnitType(qName));
         }
-    }
-
-    public static void main(String[] args) {
-        new ConfigReader().parse();
     }
 
     private static UnitType getUnitType(String typeName) {

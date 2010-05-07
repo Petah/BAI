@@ -7,6 +7,7 @@ package org.petah.spring.bai;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,6 +51,9 @@ public class InformationLogger {
     private static Option<Boolean> profilerEnabled = OptionsManager.getOption(
             new Option<Boolean>("InformationLogger.profilerEnabled", true));
 
+    /**
+     * Static constructor
+     */
     static {
         setDirectorys();
         setFiles();
@@ -102,33 +106,57 @@ public class InformationLogger {
         Logger.getLogger("org.petah").addHandler(new CustomLogHandler());
         Logger.getLogger("org.petah").setUseParentHandlers(false);
         Logger.getLogger("org.petah").setLevel(loggerLevel.getValue());
+
         // Setup logging to file
         if (logToFile.getValue()) {
-            // Move old logs to the archive directory
-            try {
-                FileUtil.moveAllFiles(logDirectory.getValue().getAbsoluteFile(),
-                        logArchiveDirectory.getValue().getAbsoluteFile());
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, "Error archiving old log files: " + ex.getMessage(), "BAI Error", JOptionPane.ERROR_MESSAGE);
-                Logger.getLogger(InformationLogger.class.getName()).log(Level.SEVERE, "Could not archive log files.", ex);
-            }
+            // Moves old logs to the archive directory
+            moveOldLogs();
+
             // Redirect output streams to files
-            try {
-                System.setOut(new PrintStream(new FileOutputStream(outputLogFile.getValue())));
-                System.setErr(new PrintStream(new FileOutputStream(errorLogFile.getValue())));
-            } catch (FileNotFoundException ex) {
-                JOptionPane.showMessageDialog(null, "Error creating log files: " + ex.getMessage(), "BAI Error", JOptionPane.ERROR_MESSAGE);
-                Logger.getLogger(InformationLogger.class.getName()).log(Level.SEVERE, "Could not create log files.", ex);
-            }
+            redirectOutputStreams();
         }
+
         // Setup the profiler
         Profiler.setProfileHandler(new CustomProfileHandler());
         Profiler.setActive(profilerEnabled.getValue());
+
         // Log memory information
         Memory memory = new Memory();
         memory.update();
-        Logger.getLogger(InformationLogger.class.getName()).info("Memory: free: " + memory.getFree() + " used: " + memory.getUsed() +
-                " allocated: " + memory.getAllocated() + " maximum: " + memory.getMaximum());
+        Logger.getLogger(InformationLogger.class.getName()).info("Memory: free: " + memory.getFree() + " used: " + memory.getUsed()
+                + " allocated: " + memory.getAllocated() + " maximum: " + memory.getMaximum());
+    }
+
+    /**
+     * Moves old logs to the archive directory
+     */
+    private static void moveOldLogs() {
+        try {
+            FileUtil.moveAllFiles(logDirectory.getValue().getAbsoluteFile(),
+                    logArchiveDirectory.getValue().getAbsoluteFile(),
+                    new FilenameFilter() {
+
+                        public boolean accept(File dir, String name) {
+                            return name.endsWith(".txt");
+                        }
+                    });
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error archiving old log files: " + ex.getMessage(), "BAI Error", JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(InformationLogger.class.getName()).log(Level.SEVERE, "Could not archive log files.", ex);
+        }
+    }
+
+    /**
+     * Redirect output streams to files
+     */
+    private static void redirectOutputStreams() {
+        try {
+            System.setOut(new PrintStream(new FileOutputStream(outputLogFile.getValue())));
+            System.setErr(new PrintStream(new FileOutputStream(errorLogFile.getValue())));
+        } catch (FileNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Error creating log files: " + ex.getMessage(), "BAI Error", JOptionPane.ERROR_MESSAGE);
+            Logger.getLogger(InformationLogger.class.getName()).log(Level.SEVERE, "Could not create log files.", ex);
+        }
     }
 
     public static File getErrorLogFile() {
