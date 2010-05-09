@@ -17,5 +17,5 @@ h2. Commands:
 
 
 p. If you are going to use the GUI I recommend you run spring in window mode.
-p. The AI is specifically designed for BA only.
-p. You can use any code in the org.petah.spring.bai package under the "Creative Commons Attribution License 3.0":http://creativecommons.org/licenses/by/3.0/
+The AI is specifically designed for BA only.
+You can use any code in the org.petah.spring.bai package under the "Creative Commons Attribution License 3.0":http://creativecommons.org/licenses/by/3.0/
