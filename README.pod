@@ -1,20 +1,28 @@
-=head1 Balanced Annihiliation AI (BAI)
+=begin html
+<h1>Balanced Annihiliation AI (BAI)</h1>
 
-=head2 Features:
-=item * Multithreading (including caching of most of Spring's data so it can be accessed on other threads)
-=item * GUI visualisation (including height maps, threat maps, target maps, movement islands, etc)
-=item * Real time adjustable JavaScript interface (WIP)
-=item * Team cooperation
-=item * Multiple strategies (porc, rush, eco, etc)
-=item * Resource sharing
+<h2>Features:</h2>
+<ul>
+    <li>Multithreading (including caching of most of Spring's data so it can be accessed on other threads)</li>
+    <li>GUI visualisation (including height maps, threat maps, target maps, movement islands, etc)</li>
+    <li>Real time adjustable JavaScript interface (WIP)</li>
+    <li>Team cooperation</li>
+    <li>Multiple strategies (porc, rush, eco, etc)</li>
+    <li>Resource sharing</li>
+</ul>
 
-=head2 Commands:
-=item * -showgui, -hidegui
-=item * -allcheat (enables cheating, currently it shouldn't affect anything)
-=item * -hi (says hello world, to make sure the AI is still there)
-=item * -dir (display some debug information about the directories)
-=item * -savesettings (save the current options to a file)
+<h2>Commands:</h2>
+<ul>
+    <li>-showgui, -hidegui</li>
+    <li>-allcheat (enables cheating, currently it shouldn't affect anything)</li>
+    <li>-hi (says hello world, to make sure the AI is still there)</li>
+    <li>-dir (display some debug information about the directories)</li>
+    <li>-savesettings (save the current options to a file)</li>
+</ul>
 
-If you are going to use the GUI I recommend you run spring in window mode.
-The AI is specifically designed for BA only.
-You can use any code in the org.petah.spring.bai package under the Creative Commons Attribution License 3.0
+<p>
+If you are going to use the GUI I recommend you run spring in window mode.<br />
+The AI is specifically designed for BA only.<br />
+You can use any code in the org.petah.spring.bai package under the <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution License 3.0</a><br />
+</p>
+=end html
