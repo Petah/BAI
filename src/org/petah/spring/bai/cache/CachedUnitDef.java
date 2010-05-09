@@ -117,7 +117,6 @@ public class CachedUnitDef implements Serializable {
     private float metalStorage;
     private float energyStorage;
     private int techLevel;
-    private String tedClassString;
     private float terraformSpeed;
     private float tidalResourceGenerator;
     private String tooltip;
@@ -202,8 +201,6 @@ public class CachedUnitDef implements Serializable {
     private boolean pushResistant;
     private boolean reclaimable;
     private boolean releaseHeld;
-    private boolean metalMaker;
-    private boolean energyMaker;
     private boolean showPlayerName;
     private boolean sonarStealth;
     private boolean squareMetalExtractor;
@@ -338,7 +335,6 @@ public class CachedUnitDef implements Serializable {
         metalStorage = def.getStorage(ResourceManager.getMetal());
         energyStorage = def.getStorage(ResourceManager.getEnergy());
         techLevel = def.getTechLevel();
-        tedClassString = def.getTedClassString();
         terraformSpeed = def.getTerraformSpeed();
         tidalResourceGenerator = def.getTidalResourceGenerator(ResourceManager.getEnergy());
         tooltip = def.getTooltip();
@@ -422,8 +418,6 @@ public class CachedUnitDef implements Serializable {
         pushResistant = def.isPushResistant();
         reclaimable = def.isReclaimable();
         releaseHeld = def.isReleaseHeld();
-        energyMaker = def.isResourceMaker(ResourceManager.getEnergy());
-        metalMaker = def.isResourceMaker(ResourceManager.getMetal());
         showPlayerName = def.isShowPlayerName();
         sonarStealth = def.isSonarStealth();
         squareMetalExtractor = def.isSquareResourceExtractor(ResourceManager.getMetal());
@@ -705,10 +699,6 @@ public class CachedUnitDef implements Serializable {
         return energyMake;
     }
 
-    public boolean isEnergyMaker() {
-        return energyMaker;
-    }
-
     public float getEnergyStorage() {
         return energyStorage;
     }
@@ -933,10 +923,6 @@ public class CachedUnitDef implements Serializable {
         return metalMake;
     }
 
-    public boolean isMetalMaker() {
-        return metalMaker;
-    }
-
     public float getMetalStorage() {
         return metalStorage;
     }
@@ -1106,10 +1092,6 @@ public class CachedUnitDef implements Serializable {
 
     public int getTechLevel() {
         return techLevel;
-    }
-
-    public String getTedClassString() {
-        return tedClassString;
     }
 
     public float getTerraformSpeed() {
