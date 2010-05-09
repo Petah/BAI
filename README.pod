@@ -1,0 +1,20 @@
+=head1 Balanced Annihiliation AI (BAI)
+
+=head2 Features:
+=item * Multithreading (including caching of most of Spring's data so it can be accessed on other threads)
+=item * GUI visualisation (including height maps, threat maps, target maps, movement islands, etc)
+=item * Real time adjustable JavaScript interface (WIP)
+=item * Team cooperation
+=item * Multiple strategies (porc, rush, eco, etc)
+=item * Resource sharing
+
+=head2 Commands:
+=item * -showgui, -hidegui
+=item * -allcheat (enables cheating, currently it shouldn't affect anything)
+=item * -hi (says hello world, to make sure the AI is still there)
+=item * -dir (display some debug information about the directories)
+=item * -savesettings (save the current options to a file)
+
+If you are going to use the GUI I recommend you run spring in window mode.
+The AI is specifically designed for BA only.
+You can use any code in the org.petah.spring.bai package under the Creative Commons Attribution License 3.0
