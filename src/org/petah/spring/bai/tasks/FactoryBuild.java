@@ -4,7 +4,8 @@
  */
 package org.petah.spring.bai.tasks;
 
-import org.petah.spring.bai.util.CommandUtil;
+import com.springrts.ai.oo.AIFloat3;
+import org.petah.spring.bai.delegate.GlobalDelegate;
 
 /**
  *
@@ -20,6 +21,6 @@ public class FactoryBuild extends DynamicCommand {
 
     @Override
     public void execute() {
-        CommandUtil.factoryBuild(aiDelegate, unitName, unit);
+        unit.build(GlobalDelegate.getUnitDef(unitName, unit.getFaction()).getUnitDef(), new AIFloat3());
     }
 }

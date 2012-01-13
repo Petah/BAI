@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.util;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.spring.bai.cache.CachedUnit;
 
 /**

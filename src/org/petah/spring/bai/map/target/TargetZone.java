@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.map.target;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.awt.Point;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

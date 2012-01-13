@@ -51,10 +51,9 @@ public class DefaultCommanderStage1 extends Task {
                             if ((!aiDelegate.getResourceManager().isEnergyOver(0.1f) ||
                                     !aiDelegate.getResourceManager().isMetalOver(0.1f)) &&
                                     aiDelegate.getGroupManager().getGroup("BaseBuilders").size() > 0) {
-                                CommandUtil.guard(aiDelegate, builder,
-                                        aiDelegate.getGroupManager().getGroup("BaseBuilders").getUnit(0), false);
+                                builder.guard(aiDelegate.getGroupManager().getGroup("BaseBuilders").getUnit(0).getUnit());
                             } else {
-                                CommandUtil.stop(aiDelegate, builder);
+                                builder.stop();
                                 state = State.Building;
                             }
                         } else {
@@ -143,7 +142,7 @@ public class DefaultCommanderStage1 extends Task {
     }
 
     /**
-     * 
+     *
      * @param aiDelegate
      * @param builder
      * @return true if the basic building are complete

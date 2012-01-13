@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.plan;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.LinkedList;
 import java.util.List;
 import org.petah.common.option.Option;
@@ -29,7 +29,7 @@ public class PlanCommands {
             new Option<Integer>("PlanCommands.blockMaxAttempts", 300));
 
     public static void markBuilding(AIDelegate aiDelegate, CachedUnitDef def, AIFloat3 pos) {
-        CommandUtil.drawPoint(aiDelegate, pos, def.getHumanName());
+        aiDelegate.getCallback().getMap().getDrawer().addPoint(pos, def.getHumanName());
     }
 
     public static void outlineBuilding(AIDelegate aiDelegate, CachedUnitDef def, AIFloat3 pos) {
@@ -38,16 +38,16 @@ public class PlanCommands {
         int height = MapUtil.mapToTerrain(def.getZSize());
         from = new AIFloat3(pos.x - width / 2, 0, pos.z - height / 2);
         to = new AIFloat3(pos.x + width / 2, 0, pos.z - height / 2);
-        CommandUtil.drawLine(aiDelegate, from, to);
+        aiDelegate.getCallback().getMap().getDrawer().addLine(from, to);
         from = new AIFloat3(pos.x + width / 2, 0, pos.z - height / 2);
         to = new AIFloat3(pos.x + width / 2, 0, pos.z + height / 2);
-        CommandUtil.drawLine(aiDelegate, from, to);
+        aiDelegate.getCallback().getMap().getDrawer().addLine(from, to);
         from = new AIFloat3(pos.x + width / 2, 0, pos.z + height / 2);
         to = new AIFloat3(pos.x - width / 2, 0, pos.z + height / 2);
-        CommandUtil.drawLine(aiDelegate, from, to);
+        aiDelegate.getCallback().getMap().getDrawer().addLine(from, to);
         from = new AIFloat3(pos.x - width / 2, 0, pos.z + height / 2);
         to = new AIFloat3(pos.x - width / 2, 0, pos.z - height / 2);
-        CommandUtil.drawLine(aiDelegate, from, to);
+        aiDelegate.getCallback().getMap().getDrawer().addLine(from, to);
     }
 
     public static List<AIFloat3> getBlock(AIDelegate aiDelegate, CachedUnitDef building, AIFloat3 pos, int xSize, int zSize) {
@@ -101,7 +101,7 @@ public class PlanCommands {
                 if (GlobalOptions.isDebug()) {
                     markBuilding(aiDelegate, building, buildPos);
                 }
-                CommandUtil.queueUnit(aiDelegate, builder, building, buildPos);
+                builder.build(building.getUnitDef(), buildPos, facing, true);
             }
             return true;
         }

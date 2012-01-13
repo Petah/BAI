@@ -40,7 +40,7 @@ public class PorcCommanderStage2 extends Task {
                     case GuardFactory:
                     case GuardBuilder:
                         if (getNeededBuilding() != Building.None) {
-                            CommandUtil.stop(aiDelegate, builder);
+                            builder.stop();
                             state = State.Build;
                         } else {
                             if (aiDelegate.getGroupManager().getGroup("baseBuilders").size() > 0 &&

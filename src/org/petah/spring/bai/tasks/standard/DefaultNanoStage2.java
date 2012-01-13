@@ -5,7 +5,7 @@
 package org.petah.spring.bai.tasks.standard;
 
 import org.petah.spring.bai.delegate.AIDelegate;
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
 import org.petah.common.util.GameMath;
@@ -40,17 +40,17 @@ public class DefaultNanoStage2 extends Task {
                 CachedUnit factory = getReclaimableFactory(aiDelegate, unit);
                 CachedUnit energy = PorcNano.getReclaimableEnergy(aiDelegate, unit);
                 if (factory != null) {
-                    CommandUtil.reclaim(aiDelegate, unit, factory, false);
+                    unit.reclaimUnit(factory.getUnit());
                 } else if (!aiDelegate.getResourceManager().isMetalOver(0.2f) && energy != null) {
-                    CommandUtil.reclaim(aiDelegate, unit, energy, false);
+                    unit.reclaimUnit(energy.getUnit());
                 } else if (aiDelegate.getResourceManager().isEnergyOver(500)) {
-                    CommandUtil.setMoveState(aiDelegate, unit, CommandUtil.MOVE_STATE_ROAM);
+                    unit.setMoveState(CommandUtil.MOVE_STATE_ROAM);
                     AIFloat3 pos = unit.getPos();
                     pos.x += Math.random() * 500 - 250;
                     pos.z += Math.random() * 500 - 250;
-                    CommandUtil.patrol(aiDelegate, unit, pos, false);
+                    unit.patrolTo(pos);
                 } else {
-                    CommandUtil.stop(aiDelegate, unit);
+                    unit.stop();
                 }
             }
         }

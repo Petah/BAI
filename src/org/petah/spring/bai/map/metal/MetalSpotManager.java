@@ -1,7 +1,7 @@
 package org.petah.spring.bai.map.metal;
 
 import org.petah.spring.bai.cache.CachedMetalMap;
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.LinkedList;
 import java.util.TreeMap;
 import org.petah.common.util.GameMath;

@@ -4,10 +4,12 @@
  */
 package org.petah.spring.bai.tasks.standard;
 
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
 import org.petah.spring.bai.cache.CachedUnit;
 import org.petah.spring.bai.delegate.AIDelegate;
+import org.petah.spring.bai.delegate.GlobalDelegate;
 import org.petah.spring.bai.group.UnitGroup;
 import org.petah.spring.bai.tasks.Task;
 import org.petah.spring.bai.unit.Faction;
@@ -38,155 +40,159 @@ public class DefaultFactory extends Task {
         super(aiDelegate);
     }
 
+    public void build(String name, CachedUnit factory) {
+        factory.build(GlobalDelegate.getUnitDef(name, factory.getFaction()).getUnitDef(), new AIFloat3());
+    }
+
     public boolean update(UnitGroup group, int frame) {
         if (nextUpdate <= frame) {
             nextUpdate = frame + updateTime.getValue();
             for (CachedUnit unit : group) {
                 UnitInfo info = UnitInfo.getUnitInfo(unit.getDef());
 //                if (info.isType(UnitType.Factory)) {
-                if (unit.getCurrentCommands().size() == 0) {
+                if (unit.getCurrentCommands().isEmpty()) {
                     if (info.getName().equals("KbotFactory")) {
                         if (aiDelegate.getGroupManager().getGroup("Builders").size() < maxBuilders.getValue()) {
-                            CommandUtil.factoryBuild(aiDelegate, "KT1Builder", unit);
+                            build("KT1Builder", unit);
                         }
                         if (aiDelegate.getGroupManager().getGroup("Scavengers").size() < maxScavengers.getValue()) {
-                            CommandUtil.factoryBuild(aiDelegate, "Scavenger", unit);
+                            build("Scavenger", unit);
                         }
                         if (Faction.getFaction(unit.getDef()) == Faction.Arm) {
                             if (aiDelegate.getGroupManager().getGroup("Scouts").size() < maxScouts.getValue()) {
-                                CommandUtil.factoryBuild(aiDelegate, "Flea", unit);
+                                build("Flea", unit);
                             }
-                            CommandUtil.factoryBuild(aiDelegate, "Warrior", unit);
+                            build("Warrior", unit);
                         } else {
                             if (aiDelegate.getGroupManager().getGroup("Scouts").size() < maxScouts.getValue()) {
-                                CommandUtil.factoryBuild(aiDelegate, "KLightRaider", unit);
+                                build("KLightRaider", unit);
                             }
-                            CommandUtil.factoryBuild(aiDelegate, "KLightRaider", unit);
+                            build("KLightRaider", unit);
                         }
-                        CommandUtil.factoryBuild(aiDelegate, "KLightRanger", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "KLightAssault", unit);
+                        build("KLightRanger", unit);
+                        build("KLightAssault", unit);
 //                        if (aiDelegate.getResourceManager().isMetalOver(500)) {
 //                            if (aiDelegate.getGroupManager().getGroup("Builders").size() < maxBuilders.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "KT1Builder", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "KT1Builder", unit);
+//                                build("KT1Builder", unit);
+//                                build("KT1Builder", unit);
 //                            }
 //                            if (aiDelegate.getGroupManager().getGroup("Scavengers").size() < maxScavengers.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "Scavenger", unit);
+//                                build("Scavenger", unit);
 //                            }
 //                            if (Faction.getFaction(unit.getDef()) == Faction.Arm) {
 //                                if (aiDelegate.getGroupManager().getGroup("Scouts").size() < maxScouts.getValue()) {
-//                                    CommandUtil.factoryBuild(aiDelegate, "Flea", unit);
-//                                    CommandUtil.factoryBuild(aiDelegate, "Flea", unit);
+//                                    build("Flea", unit);
+//                                    build("Flea", unit);
 //                                }
-//                                CommandUtil.factoryBuild(aiDelegate, "Warrior", unit);
+//                                build("Warrior", unit);
 //                            } else {
-//                                CommandUtil.factoryBuild(aiDelegate, "KLightRaider", unit);
+//                                build("KLightRaider", unit);
 //                            }
-//                            CommandUtil.factoryBuild(aiDelegate, "KLightRanger", unit);
-//                            CommandUtil.factoryBuild(aiDelegate, "KLightAssault", unit);
+//                            build("KLightRanger", unit);
+//                            build("KLightAssault", unit);
 //                        } else {
 //                            if (aiDelegate.getGroupManager().getGroup("scouts").size() < maxScouts.getValue() &&
 //                                    Faction.getFaction(unit.getDef()) == Faction.Arm) {
-//                                CommandUtil.factoryBuild(aiDelegate, "Flea", unit);
+//                                build("Flea", unit);
 //                            }
-//                            CommandUtil.factoryBuild(aiDelegate, "KLightRaider", unit);
-//                            CommandUtil.factoryBuild(aiDelegate, "KLightRaider", unit);
+//                            build("KLightRaider", unit);
+//                            build("KLightRaider", unit);
 //                            if (aiDelegate.getGroupManager().getGroup("builders").size() < maxBuilders.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "KT1Builder", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "KT1Builder", unit);
+//                                build("KT1Builder", unit);
+//                                build("KT1Builder", unit);
 //                            }
 //                        }
                     } else if (info.getName().equals("VehicleFactory")) {
                             if (aiDelegate.getGroupManager().getGroup("builders").size() < maxBuilders.getValue()) {
-                                CommandUtil.factoryBuild(aiDelegate, "VT1Builder", unit);
-                                CommandUtil.factoryBuild(aiDelegate, "VT1Builder", unit);
+                                build("VT1Builder", unit);
+                                build("VT1Builder", unit);
                             }
                             if (aiDelegate.getGroupManager().getGroup("scouts").size() < maxScouts.getValue()) {
-                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
-                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
+                                build("VScout", unit);
+                                build("VScout", unit);
                             }
-                            CommandUtil.factoryBuild(aiDelegate, "VLightRiot", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "VLightAssault", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "VLightRanger", unit);
+                            build("VLightRiot", unit);
+                            build("VLightAssault", unit);
+                            build("VLightRanger", unit);
 //                        if (aiDelegate.getResourceManager().isMetalOver(500)) {
 //                            if (aiDelegate.getGroupManager().getGroup("builders").size() < maxBuilders.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "VT1Builder", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "VT1Builder", unit);
+//                                build("VT1Builder", unit);
+//                                build("VT1Builder", unit);
 //                            }
 //                            if (aiDelegate.getGroupManager().getGroup("scouts").size() < maxScouts.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
+//                                build("VScout", unit);
+//                                build("VScout", unit);
 //                            }
-//                            CommandUtil.factoryBuild(aiDelegate, "VLightRiot", unit);
-//                            CommandUtil.factoryBuild(aiDelegate, "VLightAssault", unit);
-//                            CommandUtil.factoryBuild(aiDelegate, "VLightRanger", unit);
+//                            build("VLightRiot", unit);
+//                            build("VLightAssault", unit);
+//                            build("VLightRanger", unit);
 //                        } else {
 //                            if (aiDelegate.getGroupManager().getGroup("scouts").size() < maxScouts.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "VScout", unit);
+//                                build("VScout", unit);
+//                                build("VScout", unit);
+//                                build("VScout", unit);
 //                            }
-//                            CommandUtil.factoryBuild(aiDelegate, "VLightRaider", unit);
+//                            build("VLightRaider", unit);
 //                            if (aiDelegate.getGroupManager().getGroup("builders").size() < maxBuilders.getValue()) {
-//                                CommandUtil.factoryBuild(aiDelegate, "VT1Builder", unit);
-//                                CommandUtil.factoryBuild(aiDelegate, "VT1Builder", unit);
+//                                build("VT1Builder", unit);
+//                                build("VT1Builder", unit);
 //                            }
-//                            CommandUtil.factoryBuild(aiDelegate, "VLightRaider", unit);
+//                            build("VLightRaider", unit);
 //                        }
                     } else if (info.getName().equals("ShipFactory")) {
                     } else if (info.getName().equals("AircraftFactory")) {
-                        CommandUtil.factoryBuild(aiDelegate, "AScout", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "AScout", unit);
+                        build("AScout", unit);
+                        build("AScout", unit);
                         if (aiDelegate.getGroupManager().getGroup("builders").size() < maxT2Builders.getValue()) {
-                            CommandUtil.factoryBuild(aiDelegate, "AT1Builder", unit);
+                            build("AT1Builder", unit);
                         }
-                        CommandUtil.factoryBuild(aiDelegate, "ALightBomber", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "ALightBomber", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "ALightBomber", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "ALightFighter", unit);
+                        build("ALightBomber", unit);
+                        build("ALightBomber", unit);
+                        build("ALightBomber", unit);
+                        build("ALightFighter", unit);
                     } else if (info.getName().equals("AKbotFactory")) {
                         if (aiDelegate.getGroupManager().getGroup("Builders").size() < maxT2Builders.getValue()) {
-                            CommandUtil.factoryBuild(aiDelegate, "KT2Builder", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "KT2Builder", unit);
+                            build("KT2Builder", unit);
+                            build("KT2Builder", unit);
                         }
                         if (aiDelegate.getGroupManager().getGroup("Scavengers").size() < maxScavengers.getValue()) {
-                            CommandUtil.factoryBuild(aiDelegate, "KEngineer", unit);
+                            build("KEngineer", unit);
                         }
                         if (Faction.getFaction(unit.getDef()) == Faction.Arm) {
-                            CommandUtil.factoryBuild(aiDelegate, "Sniper", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "Fido", unit);
+                            build("Sniper", unit);
+                            build("Fido", unit);
                         } else {
-                            CommandUtil.factoryBuild(aiDelegate, "KRocketLauncher", unit);
+                            build("KRocketLauncher", unit);
                         }
-                        CommandUtil.factoryBuild(aiDelegate, "KRaider", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "KAssault", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "KArtillery", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "KHeavyAssault", unit);
+                        build("KRaider", unit);
+                        build("KAssault", unit);
+                        build("KArtillery", unit);
+                        build("KHeavyAssault", unit);
                     } else if (info.getName().equals("AVehicleFactory")) {
                         if (aiDelegate.getGroupManager().getGroup("Builders").size() < maxT2Builders.getValue()) {
-                            CommandUtil.factoryBuild(aiDelegate, "VT2Builder", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "VT2Builder", unit);
+                            build("VT2Builder", unit);
+                            build("VT2Builder", unit);
                         }
-                        CommandUtil.factoryBuild(aiDelegate, "VAssault", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VAssault", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VAssault", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VAssault", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VArtillery", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VRanger", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VArtillery", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VRanger", unit);
-                        CommandUtil.factoryBuild(aiDelegate, "VAntiAir", unit);
+                        build("VAssault", unit);
+                        build("VAssault", unit);
+                        build("VAssault", unit);
+                        build("VAssault", unit);
+                        build("VArtillery", unit);
+                        build("VRanger", unit);
+                        build("VArtillery", unit);
+                        build("VRanger", unit);
+                        build("VAntiAir", unit);
                         if (Faction.getFaction(unit.getDef()) == Faction.Arm) {
                             if (aiDelegate.getGroupManager().getGroup("Scavengers").size() < maxScavengers.getValue()) {
-                                CommandUtil.factoryBuild(aiDelegate, "VEngineer", unit);
-                                CommandUtil.factoryBuild(aiDelegate, "VEngineer", unit);
+                                build("VEngineer", unit);
+                                build("VEngineer", unit);
                             }
-                            CommandUtil.factoryBuild(aiDelegate, "LightningTank", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "LightningTank", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "LightningTank", unit);
-                            CommandUtil.factoryBuild(aiDelegate, "StealthTank", unit);
+                            build("LightningTank", unit);
+                            build("LightningTank", unit);
+                            build("LightningTank", unit);
+                            build("StealthTank", unit);
                         } else {
-                            CommandUtil.factoryBuild(aiDelegate, "Goliath", unit);
+                            build("Goliath", unit);
                         }
                     }
                 }

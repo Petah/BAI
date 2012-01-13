@@ -4,11 +4,14 @@
  */
 package org.petah.spring.bai.cache;
 
+import com.springrts.ai.oo.CallbackAIException;
+import com.springrts.ai.oo.clb.Feature;
+import com.springrts.ai.oo.clb.UnitDef;
 import org.petah.spring.bai.unit.*;
 import org.petah.spring.bai.cache.*;
-import com.springrts.ai.AIFloat3;
-import com.springrts.ai.oo.CurrentCommand;
-import com.springrts.ai.oo.Unit;
+import com.springrts.ai.oo.AIFloat3;
+import com.springrts.ai.oo.clb.Command;
+import com.springrts.ai.oo.clb.Unit;
 import java.io.Serializable;
 import java.util.List;
 import org.petah.common.option.Option;
@@ -25,12 +28,32 @@ import org.petah.spring.bai.unit.UnitType;
  */
 public class CachedUnit implements Serializable {
 
-    public static final long serialVersionUID = 1L;
+    // Serialization ID
+    public static final long serialVersionUID = 2L;
+
+    // Option definitions
+    public static final short OPT_NONE = 0;
+    public static final short OPT_QUEUE = 32;
+
+    // Building facing directions
+    public static final int FACING_NORTH    = 0;
+    public static final int FACING_EAST     = 1;
+    public static final int FACING_SOUTH    = 2;
+    public static final int FACING_WEST     = 3;
+
+    // Move states
+    public static final int MOVE_STATE_HOLD_POSITION    = 0;
+    public static final int MOVE_STATE_MANEUVER         = 1;
+    public static final int MOVE_STATE_ROAM             = 2;
+
     // Options
     public static Option<Integer> fastUpdateTime = OptionsManager.getOption(
             new Option<Integer>("CachedUnit.fastUpdateTime", 25));
     public static Option<Integer> slowUpdateTime = OptionsManager.getOption(
             new Option<Integer>("CachedUnit.slowUpdateTime", 25));
+    private static Option<Integer> commandTimeout = OptionsManager.getOption(
+            new Option<Integer>("CachedUnit.commandTimeout", 3000));
+
     // Update timer
     private int nextFastUpdate = 0;
     private int nextSlowUpdate = 0;
@@ -64,7 +87,7 @@ public class CachedUnit implements Serializable {
     private boolean neutral;
     private boolean paralyzed;
     // Non serializable properties
-    private transient List<CurrentCommand> currentCommands;
+    private transient List<Command> currentCommands;
     private transient AIFloat3 pos;
     // Unused properties
 //    private int aiHint;
@@ -149,6 +172,176 @@ public class CachedUnit implements Serializable {
 //        lastUserOrderFrame = unit.getLastUserOrderFrame();
     }
 
+    //<editor-fold defaultstate="collapsed" desc="Unit Delegates">
+    public void unloadUnitsInArea(AIFloat3 aif, float f) throws CallbackAIException {
+        unit.unloadUnitsInArea(aif, f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void unload(AIFloat3 aif, Unit unit) throws CallbackAIException {
+        this.unit.unload(aif, unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void stop() throws CallbackAIException {
+        unit.stop(OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void stockpile() throws CallbackAIException {
+        unit.stockpile(OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setWantedMaxSpeed(float f) throws CallbackAIException {
+        unit.setWantedMaxSpeed(f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setTrajectory(int i) throws CallbackAIException {
+        unit.setTrajectory(i, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setRepeat(boolean bln) throws CallbackAIException {
+        unit.setRepeat(bln, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setOn(boolean bln) throws CallbackAIException {
+        unit.setOn(bln, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setMoveState(int i) throws CallbackAIException {
+        unit.setMoveState(i, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setIdleMode(int i) throws CallbackAIException {
+        unit.setIdleMode(i, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setFireState(int i) throws CallbackAIException {
+        unit.setFireState(i, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setBase(AIFloat3 aif) throws CallbackAIException {
+        unit.setBase(aif, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void setAutoRepairLevel(int i) throws CallbackAIException {
+        unit.setAutoRepairLevel(i, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void selfDestruct() throws CallbackAIException {
+        unit.selfDestruct(OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void resurrectInArea(AIFloat3 aif, float f) throws CallbackAIException {
+        unit.resurrectInArea(aif, f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void resurrect(Feature ftr) throws CallbackAIException {
+        unit.resurrect(ftr, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void restoreArea(AIFloat3 aif, float f) throws CallbackAIException {
+        unit.restoreArea(aif, f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void repair(Unit unit) throws CallbackAIException {
+        this.unit.repair(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void removeFromGroup() throws CallbackAIException {
+        unit.removeFromGroup(OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void reclaimUnit(Unit unit) throws CallbackAIException {
+        this.unit.reclaimUnit(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void reclaimUnit(Unit unit, boolean queue) throws CallbackAIException {
+        this.unit.reclaimUnit(unit, queue ? OPT_QUEUE : OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void reclaimFeature(Feature ftr) throws CallbackAIException {
+        unit.reclaimFeature(ftr, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void reclaimInArea(AIFloat3 aif, float area) throws CallbackAIException {
+        unit.reclaimInArea(aif, area, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void patrolTo(AIFloat3 aif) throws CallbackAIException {
+        unit.patrolTo(aif, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void moveTo(AIFloat3 aif) throws CallbackAIException {
+        unit.moveTo(aif, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void loadUnitsInArea(AIFloat3 aif, float f) throws CallbackAIException {
+        unit.loadUnitsInArea(aif, f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void loadUnits(List<Unit> list) throws CallbackAIException {
+        unit.loadUnits(list, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void loadOnto(Unit unit) throws CallbackAIException {
+        this.unit.loadOnto(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void guard(Unit unit) throws CallbackAIException {
+        this.unit.guard(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void fight(AIFloat3 aif) throws CallbackAIException {
+        unit.fight(aif, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void executeCustomCommand(int i, List<Float> list) throws CallbackAIException {
+        unit.executeCustomCommand(i, list, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void dGunPosition(AIFloat3 aif) throws CallbackAIException {
+        unit.dGunPosition(aif, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void dGun(Unit unit) throws CallbackAIException {
+        this.unit.dGun(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void cloak(boolean bln) throws CallbackAIException {
+        unit.cloak(bln, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void captureInArea(AIFloat3 aif, float f) throws CallbackAIException {
+        unit.captureInArea(aif, f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void capture(Unit unit) throws CallbackAIException {
+        this.unit.capture(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void build(UnitDef ud, AIFloat3 aif) throws CallbackAIException {
+        unit.build(ud, aif, FACING_EAST, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void build(UnitDef ud, AIFloat3 aif, int facing) throws CallbackAIException {
+        unit.build(ud, aif, facing, OPT_QUEUE, commandTimeout.getValue());
+    }
+
+    public void build(UnitDef ud, AIFloat3 aif, int facing, boolean queue) throws CallbackAIException {
+        unit.build(ud, aif, facing, queue ? OPT_QUEUE : OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void attackArea(AIFloat3 aif, float f) throws CallbackAIException {
+        unit.attackArea(aif, f, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void attack(Unit unit) throws CallbackAIException {
+        this.unit.attack(unit, OPT_NONE, commandTimeout.getValue());
+    }
+
+    public void attack(Unit unit, boolean queue) throws CallbackAIException {
+        this.unit.attack(unit, queue ? OPT_QUEUE : OPT_NONE, commandTimeout.getValue());
+    }
+    //</editor-fold>
+
     public boolean isActivated() {
         return activated;
     }
@@ -172,7 +365,7 @@ public class CachedUnit implements Serializable {
         return cloaked;
     }
 
-    public List<CurrentCommand> getCurrentCommands() {
+    public List<Command> getCurrentCommands() {
         return currentCommands;
     }
 

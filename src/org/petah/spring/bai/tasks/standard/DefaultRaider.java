@@ -5,7 +5,7 @@
 package org.petah.spring.bai.tasks.standard;
 
 import org.petah.spring.bai.delegate.AIDelegate;
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.List;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
@@ -39,7 +39,7 @@ public class DefaultRaider extends Task {
             for (CachedUnit unit : group) {
                 if (zones.size() > 0) {
                     ControlZone controlZone = zones.get((int) (zones.size() * Math.random()));
-                    CommandUtil.fight(aiDelegate, unit, new AIFloat3(controlZone.getTerrainCenterX(), 0, controlZone.getTerrainCenterZ()), false);
+                    unit.fight(new AIFloat3(controlZone.getTerrainCenterX(), 0, controlZone.getTerrainCenterZ()));
                 }
             }
         }

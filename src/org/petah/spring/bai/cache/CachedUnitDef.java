@@ -1,6 +1,6 @@
 package org.petah.spring.bai.cache;
 
-import com.springrts.ai.oo.UnitDef;
+import com.springrts.ai.oo.clb.UnitDef;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
@@ -254,7 +254,7 @@ public class CachedUnitDef implements Serializable {
         cloakCost = def.getCloakCost();
         cloakCostMoving = def.getCloakCostMoving();
         cobId = def.getCobId();
-        controlRadius = def.getControlRadius();
+//        controlRadius = def.getControlRadius();
         metalCost = def.getCost(ResourceManager.getMetal());
         energyCost = def.getCost(ResourceManager.getEnergy());
         customParams = def.getCustomParams();
@@ -371,7 +371,7 @@ public class CachedUnitDef implements Serializable {
         ableToCapture = def.isAbleToCapture();
         ableToCloak = def.isAbleToCloak();
         ableToCrash = def.isAbleToCrash();
-        ableToDGun = def.isAbleToDGun();
+//        ableToDGun = def.isAbleToDGun();
         ableToDropFlare = def.isAbleToDropFlare();
         ableToFight = def.isAbleToFight();
         ableToFireControl = def.isAbleToFireControl();
@@ -429,7 +429,7 @@ public class CachedUnitDef implements Serializable {
         turnInPlace = def.isTurnInPlace();
         upright = def.isUpright();
         useBuildingGroundDecal = def.isUseBuildingGroundDecal();
-        valid = def.isValid();
+//        valid = def.isValid();
     }
 
     public void setDef(UnitDef def) {

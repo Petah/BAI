@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.standard;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.ArrayList;
 import java.util.List;
 import org.petah.common.option.Option;
@@ -45,8 +45,8 @@ public class DefaultScavenger extends Task {
                 if (dammagedUnits.size() > 0) {
                     fightRandomUnit(unit, dammagedUnits);
                 } else {
-                    CommandUtil.reclaimArea(aiDelegate, unit, BuilderUtil.getMapTerrainCenter(),
-                            MapUtil.mapToTerrain(Math.max(GlobalDelegate.getMapWidth(), GlobalDelegate.getMapHeight())), false);
+                    unit.reclaimInArea(BuilderUtil.getMapTerrainCenter(),
+                            MapUtil.mapToTerrain(Math.max(GlobalDelegate.getMapWidth(), GlobalDelegate.getMapHeight())));
 //                    randomFight(group);
                 }
             }
@@ -68,14 +68,14 @@ public class DefaultScavenger extends Task {
 
     private void fightRandomUnit(CachedUnit unit, List<CachedUnit> units) {
         CachedUnit other = units.get((int) (Math.random() * units.size()));
-        CommandUtil.fight(aiDelegate, unit, other.getPos(), false);
+        unit.fight(other.getPos());
     }
 
     private void randomFight(CachedUnit unit) {
-        CommandUtil.setMoveState(aiDelegate, unit, CommandUtil.MOVE_STATE_ROAM);
+        unit.setMoveState(CommandUtil.MOVE_STATE_ROAM);
         AIFloat3 pos = unit.getPos();
         pos.x += Math.random() * exploreDistance.getValue() - exploreDistance.getValue() / 2;
         pos.z += Math.random() * exploreDistance.getValue() - exploreDistance.getValue() / 2;
-        CommandUtil.fight(aiDelegate, unit, pos, false);
+        unit.fight(pos);
     }
 }

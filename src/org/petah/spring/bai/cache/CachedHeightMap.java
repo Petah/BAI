@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.cache;
 
-import com.springrts.ai.oo.Map;
+import com.springrts.ai.oo.clb.Map;
 import java.io.File;
 import java.io.Serializable;
 import java.util.List;

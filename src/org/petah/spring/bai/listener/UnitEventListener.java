@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.listener;
 
-import com.springrts.ai.oo.Unit;
+import com.springrts.ai.oo.clb.Unit;
 
 /**
  *

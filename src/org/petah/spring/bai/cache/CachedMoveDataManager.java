@@ -4,8 +4,8 @@
  */
 package org.petah.spring.bai.cache;
 
-import com.springrts.ai.oo.MoveData;
-import com.springrts.ai.oo.OOAICallback;
+import com.springrts.ai.oo.clb.MoveData;
+import com.springrts.ai.oo.clb.OOAICallback;
 import java.io.File;
 import java.io.Serializable;
 import java.util.TreeMap;

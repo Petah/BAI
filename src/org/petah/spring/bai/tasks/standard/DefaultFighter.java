@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.standard;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.List;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
@@ -46,7 +46,7 @@ public class DefaultFighter extends Task {
                     TargetZone targetZone = zones.get((int) (zones.size() * Math.random()));
                     CachedUnit enemy = DefaultDefence.getClosestEnemyUnit(targetZone, aiDelegate.getBaseCenter(), maxDistance.getValue());
                     if (enemy != null) {
-                        CommandUtil.attack(aiDelegate, unit, enemy, false);
+                        unit.attack(enemy.getUnit());
                     } else {
                         patrolUnit(unit);
                     }
@@ -65,6 +65,6 @@ public class DefaultFighter extends Task {
         AIFloat3 patrolTo = new AIFloat3();
         patrolTo.x = aiDelegate.getBaseCenter().x + GameMath.lengthDirX(patrolDistance.getValue(), direction);
         patrolTo.z = aiDelegate.getBaseCenter().z + GameMath.lengthDirY(patrolDistance.getValue(), direction);
-        CommandUtil.patrol(aiDelegate, unit, patrolTo, false);
+        unit.patrolTo(patrolTo);
     }
 }

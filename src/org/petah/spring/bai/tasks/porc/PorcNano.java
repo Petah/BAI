@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.porc;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
 import org.petah.common.util.GameMath;
@@ -42,19 +42,19 @@ public class PorcNano extends Task {
                     }
                 }
                 if (reclaim != null) {
-                    CommandUtil.stop(aiDelegate, unit);
+                    unit.stop();
                     System.err.println("Reclaiming");
-                    CommandUtil.reclaim(aiDelegate, unit, reclaim, false);
+                    unit.reclaimUnit(reclaim.getUnit());
                 } else if (aiDelegate.getResourceManager().isEnergyOver(500)) {
-                    CommandUtil.setMoveState(aiDelegate, unit, CommandUtil.MOVE_STATE_ROAM);
+                    unit.setMoveState(CachedUnit.MOVE_STATE_ROAM);
                     AIFloat3 pos = unit.getPos();
                     pos.x += Math.random() * 500 - 250;
                     pos.z += Math.random() * 500 - 250;
                     System.err.println("Patroling");
-                    CommandUtil.patrol(aiDelegate, unit, pos, false);
+                    unit.patrolTo(pos);
                 } else {
                     System.err.println("Stoping");
-                    CommandUtil.stop(aiDelegate, unit);
+                    unit.stop();
                 }
             }
 //            }

@@ -51,7 +51,7 @@ public class DefaultBomber extends Task {
                     if (zones.size() > 0) {
                         TargetZone targetZone = zones.get((int) (zones.size() * Math.random()));
                         for (CachedUnit zoneUnit : targetZone.getUnits()) {
-                                CommandUtil.attack(aiDelegate, unit, zoneUnit, true);
+                                unit.attack(zoneUnit.getUnit(), true);
                         }
                     }
 //                }

@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.listener;
 
-import com.springrts.ai.oo.OOAICallback;
+import com.springrts.ai.oo.clb.OOAICallback;
 
 /**
  *

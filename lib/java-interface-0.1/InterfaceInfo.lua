@@ -35,12 +35,16 @@ local infos = {
 	},
 	{
 		key    = 'url',
-		value  = 'http://spring.clan-sy.com/wiki/AIInterface:Java',
+		value  = 'http://springrts.com/wiki/AIInterface:Java',
 		desc   = 'URL with more detailed info about the AI',
 	},
 	{
 		key    = 'supportedLanguages',
 		value  = 'Java (possily Groovy, JRuby, ...)',
+	},
+	{
+		key    = 'supportsLookup',
+		value  = 'false',
 	},
 }
 

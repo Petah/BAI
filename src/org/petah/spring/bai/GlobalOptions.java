@@ -1,8 +1,8 @@
 package org.petah.spring.bai;
 
-import com.springrts.ai.oo.Info;
-import com.springrts.ai.oo.OOAICallback;
-import com.springrts.ai.oo.OptionValues;
+import com.springrts.ai.oo.clb.Info;
+import com.springrts.ai.oo.clb.OOAICallback;
+import com.springrts.ai.oo.clb.OptionValues;
 import java.io.File;
 import java.util.logging.Logger;
 import org.petah.common.option.Option;
@@ -27,7 +27,7 @@ public class GlobalOptions {
             new Option<Boolean>("GlobalOptions.debug", true),
             new Option<String>("description", "Enable debug mode"),
             new Option<String>("values", "true, false"));
-    // Version 
+    // Version
     private static Option<String> version = OptionsManager.getOption(
             new Option<String>("GlobalOptions.version", "0.1"),
             new Option<Boolean>("transient", true));

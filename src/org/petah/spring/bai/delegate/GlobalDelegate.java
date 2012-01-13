@@ -4,8 +4,8 @@
  */
 package org.petah.spring.bai.delegate;
 
-import com.springrts.ai.oo.MoveData;
-import com.springrts.ai.oo.OOAICallback;
+import com.springrts.ai.oo.clb.MoveData;
+import com.springrts.ai.oo.clb.OOAICallback;
 import java.util.TreeMap;
 import org.petah.spring.bai.cache.CachedHeightMap;
 import org.petah.spring.bai.cache.CachedMap;

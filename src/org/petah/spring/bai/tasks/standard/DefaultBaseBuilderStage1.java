@@ -57,7 +57,7 @@ public class DefaultBaseBuilderStage1 extends Task {
 //                        InitBuild.guardFactory(aiDelegate, unit);
                         }
                     } else {
-                        CommandUtil.guard(aiDelegate, unit, guardUnit, false);
+                        unit.guard(guardUnit.getUnit());
                     }
                 }
             }

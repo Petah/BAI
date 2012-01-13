@@ -4,18 +4,15 @@
  */
 package org.petah.spring.bai.delegate;
 
-import com.springrts.ai.AICommand;
-import com.springrts.ai.AICommandWrapper;
-import com.springrts.ai.AIFloat3;
-import com.springrts.ai.command.SendTextMessageAICommand;
-import com.springrts.ai.oo.Economy;
-import com.springrts.ai.oo.Map;
-import com.springrts.ai.oo.OOAICallback;
+import com.springrts.ai.oo.AIFloat3;
+import com.springrts.ai.oo.clb.Economy;
+import com.springrts.ai.oo.clb.Map;
+import com.springrts.ai.oo.clb.OOAICallback;
+import com.springrts.ai.oo.clb.Resource;
 import java.util.List;
 import java.util.logging.Logger;
 import org.petah.common.util.profiler.Profiler;
-import org.petah.spring.bai.AICommandException;
-import org.petah.spring.bai.AIReturnCode;
+import org.petah.spring.bai.AI;
 import org.petah.spring.bai.LocalCommandHandler;
 import org.petah.spring.bai.MoveFailHandler;
 import org.petah.spring.bai.AIOvermind;
@@ -39,9 +36,11 @@ import org.petah.spring.bai.util.Compass;
  */
 public class AIDelegate {
 
+    private static final int DEFAULT_ZONE = 0;
+
     private AIOvermind aiOvermind;
     // Handlers
-    private AIEventHandler aiEventHandler;
+    private AI aiEventHandler;
     private LocalCommandHandler localCommandHandler;
     private MoveFailHandler moveFailHandler;
     // Delegates
@@ -58,7 +57,7 @@ public class AIDelegate {
     private int allianceID;
 
     // Constructors
-    public AIDelegate(int teamID, OOAICallback callback, AIEventHandler aiEventHandler) {
+    public AIDelegate(int teamID, OOAICallback callback, AI aiEventHandler) {
         Profiler.start(AIDelegate.class, "AIDelegate()");
         this.teamID = teamID;
         this.callback = callback;
@@ -93,17 +92,22 @@ public class AIDelegate {
      * @param command
      * @return
      */
-    public int handleCommand(AICommand command) {
-        int result = callback.getEngine().handleCommand(AICommandWrapper.COMMAND_TO_ID_ENGINE, -1, command);
-        if (result != AIReturnCode.NORMAL) {
-            throw new AICommandException(this, command, result);
-        }
-        return result;
-    }
+//    public int handleCommand(Command command) {
+//        int result = callback.getEngine().handleCommand(CommandWrapper.COMMAND_TO_ID_ENGINE, -1, command);
+//        if (result != AIReturnCode.NORMAL) {
+//            throw new AICommandException(this, command, result);
+//        }
+//        return result;
+//    }
 
     public int sendMessage(Object o) {
         Logger.getLogger(AIDelegate.class.getName()).info(getPrefix() + o);
-        return handleCommand(new SendTextMessageAICommand(getPrefix() + o, 0));
+        callback.getGame().sendTextMessage(getPrefix() + o, DEFAULT_ZONE);
+        return 0;
+    }
+
+    public boolean sendResource(Resource resource, float amount, int teamId) {
+        return economy.sendResource(resource, amount, teamId);
     }
 
     public String getPrefix() {
@@ -168,7 +172,7 @@ public class AIDelegate {
     }
 
     // Getters
-    public AIEventHandler getAIEventHandler() {
+    public AI getAIEventHandler() {
         return aiEventHandler;
     }
 

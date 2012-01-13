@@ -5,7 +5,7 @@
 package org.petah.spring.bai.cache;
 
 import org.petah.spring.bai.map.metal.*;
-import com.springrts.ai.oo.Map;
+import com.springrts.ai.oo.clb.Map;
 import java.io.File;
 import java.io.Serializable;
 import java.util.List;
@@ -36,7 +36,7 @@ public class CachedMetalMap implements Serializable {
     // Class properties
     private int width;
     private int height;
-    private List<Byte> metalMap;
+    private List<Short> metalMap;
     private float metalExtractorRadius;
     private MetalMapType metalMapType;
     private long totalMetal;

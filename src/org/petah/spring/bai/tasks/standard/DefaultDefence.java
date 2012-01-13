@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.standard;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.List;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
@@ -50,7 +50,7 @@ public class DefaultDefence extends Task {
                 if (enemy != null) {
                     for (CachedUnit unit : group) {
                         if (unit.getCurrentCommands().size() == 0) {
-                            CommandUtil.attack(aiDelegate, unit, enemy, false);
+                            unit.attack(enemy.getUnit());
                         }
                     }
                 } else {
@@ -88,7 +88,7 @@ public class DefaultDefence extends Task {
                 moveTo.x = aiDelegate.getBaseCenter().x + GameMath.lengthDirX(patrolDistance.getValue(), direction);
                 moveTo.z = aiDelegate.getBaseCenter().z + GameMath.lengthDirY(patrolDistance.getValue(), direction);
                 direction += 360 / group.size();
-                CommandUtil.move(aiDelegate, unit, moveTo, false);
+                unit.moveTo(moveTo);
             }
         }
     }
@@ -100,7 +100,7 @@ public class DefaultDefence extends Task {
             AIFloat3 patrolTo = new AIFloat3();
             patrolTo.x = aiDelegate.getBaseCenter().x + GameMath.lengthDirX(patrolDistance.getValue(), direction);
             patrolTo.z = aiDelegate.getBaseCenter().z + GameMath.lengthDirY(patrolDistance.getValue(), direction);
-            CommandUtil.patrol(aiDelegate, unit, patrolTo, false);
+            unit.patrolTo(patrolTo);
 //        }
         }
     }

@@ -47,9 +47,9 @@ public class DefaultMetalMaker extends Task {
 //                    break;
 //                }
                 if (!aiDelegate.getResourceManager().isEnergyOver(0.4f)) {
-                    CommandUtil.setOnOff(aiDelegate, unit, false);
+                    unit.setOn(false);
                 } else if (aiDelegate.getResourceManager().isEnergyOver(0.6f)) {
-                    CommandUtil.setOnOff(aiDelegate, unit, true);
+                    unit.setOn(true);
                 }
             }
         }

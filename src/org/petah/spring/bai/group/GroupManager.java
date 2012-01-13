@@ -4,9 +4,9 @@
  */
 package org.petah.spring.bai.group;
 
-import com.springrts.ai.AIFloat3;
-import com.springrts.ai.oo.Unit;
-import com.springrts.ai.oo.WeaponDef;
+import com.springrts.ai.oo.AIFloat3;
+import com.springrts.ai.oo.clb.Unit;
+import com.springrts.ai.oo.clb.WeaponDef;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

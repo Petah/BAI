@@ -1,10 +1,8 @@
 package org.petah.spring.bai;
 
-import com.springrts.ai.AICommand;
-import com.springrts.ai.command.SendResourcesAICommand;
-import com.springrts.ai.oo.Economy;
-import com.springrts.ai.oo.OOAICallback;
-import com.springrts.ai.oo.Resource;
+import com.springrts.ai.oo.clb.Economy;
+import com.springrts.ai.oo.clb.OOAICallback;
+import com.springrts.ai.oo.clb.Resource;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -76,12 +74,7 @@ public class ResourceManager implements UpdateEventListener {
                     float avalibleShare = aiDelegate.getResourceManager().getEnergyCurrent() - maxEnergy;
                     int shareAmount = (int) Math.min(shareMax, avalibleShare);
                     if (shareAmount > 0) {
-                        AICommand command = new SendResourcesAICommand(ResourceManager.getEnergy().getResourceId(),
-                                shareAmount, other.getTeamID(), false);
-                        try {
-                            aiDelegate.handleCommand(command);
-                        } catch (Exception e) {
-                        }
+                        aiDelegate.sendResource(ResourceManager.getEnergy(), shareAmount, other.getTeamID());
                     }
                 }
                 if (aiDelegate.getResourceManager().getMetalCurrent() > maxMetal &&
@@ -90,12 +83,7 @@ public class ResourceManager implements UpdateEventListener {
                     float avalibleShare = aiDelegate.getResourceManager().getMetalCurrent() - maxMetal;
                     int shareAmount = (int) Math.min(shareMax, avalibleShare);
                     if (shareAmount > 0) {
-                        AICommand command = new SendResourcesAICommand(ResourceManager.getMetal().getResourceId(),
-                                shareAmount, other.getTeamID(), false);
-                        try {
-                            aiDelegate.handleCommand(command);
-                        } catch (Exception e) {
-                        }
+                        aiDelegate.sendResource(ResourceManager.getMetal(), shareAmount, other.getTeamID());
                     }
                 }
             }

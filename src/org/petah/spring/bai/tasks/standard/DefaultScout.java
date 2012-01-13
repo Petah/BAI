@@ -6,7 +6,7 @@ package org.petah.spring.bai.tasks.standard;
 
 import org.petah.spring.bai.delegate.AIDelegate;
 import org.petah.spring.bai.tasks.*;
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.LinkedList;
 import java.util.List;
 import org.petah.common.option.Option;
@@ -56,7 +56,7 @@ public class DefaultScout extends Task {
         for (CachedUnit unit : group) {
             if (oldZones.size() > 0) {
                 ControlZone controlZone = oldZones.get((int) (oldZones.size() * Math.random()));
-                CommandUtil.move(aiDelegate, unit, new AIFloat3(controlZone.getTerrainCenterX(), 0, controlZone.getTerrainCenterZ()), false);
+                unit.moveTo(new AIFloat3(controlZone.getTerrainCenterX(), 0, controlZone.getTerrainCenterZ()));
             }
         }
     }
@@ -71,7 +71,7 @@ public class DefaultScout extends Task {
                     AIFloat3 moveTo = new AIFloat3(controlZone.getTerrainX(), 0, controlZone.getTerrainZ());
                     moveTo.x += Math.random() * MapUtil.mapToTerrain(ControlZone.getSize());
                     moveTo.z += Math.random() * MapUtil.mapToTerrain(ControlZone.getSize());
-                    CommandUtil.move(aiDelegate, unit, moveTo, false);
+                    unit.moveTo(moveTo);
                 }
             }
         }

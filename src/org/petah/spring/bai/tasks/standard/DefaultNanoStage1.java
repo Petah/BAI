@@ -5,7 +5,7 @@
 package org.petah.spring.bai.tasks.standard;
 
 import org.petah.spring.bai.delegate.AIDelegate;
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
 import org.petah.spring.bai.cache.CachedUnit;
@@ -40,13 +40,13 @@ public class DefaultNanoStage1 extends Task {
                 UnitInfo info = UnitInfo.getUnitInfo(unit.getDef());
                 if (info.isType(UnitType.Nano)) {
                     if (aiDelegate.getResourceManager().isEnergyOver(500)) {
-                        CommandUtil.setMoveState(aiDelegate, unit, CommandUtil.MOVE_STATE_ROAM);
+                        unit.setMoveState(CachedUnit.MOVE_STATE_ROAM);
                         AIFloat3 pos = unit.getPos();
                         pos.x += Math.random() * 500 - 250;
                         pos.z += Math.random() * 500 - 250;
-                        CommandUtil.patrol(aiDelegate, unit, pos, false);
+                        unit.patrolTo(pos);
                     } else {
-                        CommandUtil.stop(aiDelegate, unit);
+                        unit.stop();
                     }
                 }
             }

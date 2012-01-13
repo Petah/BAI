@@ -4,8 +4,8 @@
  */
 package org.petah.spring.bai;
 
-import com.springrts.ai.AIFloat3;
-import com.springrts.ai.oo.Unit;
+import com.springrts.ai.oo.AIFloat3;
+import com.springrts.ai.oo.clb.Unit;
 import org.petah.common.util.GameMath;
 import org.petah.spring.bai.cache.CachedMap;
 import org.petah.spring.bai.delegate.AIDelegate;

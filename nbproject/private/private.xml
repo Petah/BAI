@@ -1,15 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <data xmlns="http://www.netbeans.org/ns/profiler/1" version="0.9.1"/>
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/D:/Evoke/BAI/src/Todo.java</file>
-        <file>file:/D:/Evoke/BAI/nbproject/project.properties</file>
-        <file>file:/D:/Evoke/BAI/src/org/petah/spring/bai/BAIFactory.java</file>
-        <file>file:/D:/Evoke/BAI/src/org/petah/spring/bai/InformationLogger.java</file>
-        <file>file:/D:/Evoke/BAI/src/org/petah/spring/bai/unit/UnitInfo.java</file>
-        <file>file:/D:/Evoke/BAI/src/org/petah/spring/bai/unit/ConfigReader.java</file>
-        <file>file:/D:/Evoke/BAI/test/org/petah/spring/bai/unit/ConfigReaderTest.java</file>
-        <file>file:/D:/Evoke/BAI/src/org/petah/spring/bai/GlobalCommandHandler.java</file>
-    </open-files>
-</project-private>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1"/>

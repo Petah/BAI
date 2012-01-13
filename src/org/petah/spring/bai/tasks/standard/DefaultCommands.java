@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.standard;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.spring.bai.Strategy;
 import org.petah.spring.bai.cache.CachedUnit;
 import org.petah.spring.bai.cache.CachedUnitDef;
@@ -57,18 +57,18 @@ public class DefaultCommands {
 
     public static void guardFactory(AIDelegate aiDelegate, CachedUnit builder) {
         if (aiDelegate.getGroupManager().getGroup("Factorys").size() > 0) {
-            CommandUtil.guard(aiDelegate, builder, aiDelegate.getGroupManager().getGroup("Factorys").getUnit(0), false);
+            builder.guard(aiDelegate.getGroupManager().getGroup("Factorys").getUnit(0).getUnit());
         }
     }
 
     public static void queueAdvSolar(AIDelegate aiDelegate, CachedUnit builder) {
         CachedUnitDef building = getBuildDef("ASolar", builder);
-        CommandUtil.queueUnit(aiDelegate, builder, building, getEnergyBuildPos(aiDelegate, builder, building, DEFAULT_ENERGY_SEARCH_RADIUS, DEFAULT_ENERGY_SPACING));
+        builder.build(building.getUnitDef(), getEnergyBuildPos(aiDelegate, builder, building, DEFAULT_ENERGY_SEARCH_RADIUS, DEFAULT_ENERGY_SPACING));
     }
 
     public static void queueFusion(AIDelegate aiDelegate, CachedUnit builder) {
         CachedUnitDef building = getBuildDef("Fusion", builder);
-        CommandUtil.queueUnit(aiDelegate, builder, building, getEnergyBuildPos(aiDelegate, builder, building, DEFAULT_ENERGY_SEARCH_RADIUS, DEFAULT_ENERGY_SPACING));
+        builder.build(building.getUnitDef(), getEnergyBuildPos(aiDelegate, builder, building, DEFAULT_ENERGY_SEARCH_RADIUS, DEFAULT_ENERGY_SPACING));
     }
 
     public static void queueNano(AIDelegate aiDelegate, CachedUnit builder) {
@@ -76,7 +76,7 @@ public class DefaultCommands {
         if (group.size() > 0) {
             CachedUnitDef nano = getBuildDef("Nano", builder);
             AIFloat3 pos = aiDelegate.findClosestBuildSite(nano, group.getUnit(0).getPos(), DEFAULT_SEARCH_RADIUS, DEFAULT_SPACING, 0);
-            CommandUtil.queueUnit(aiDelegate, builder, nano, pos);
+            builder.build(nano.getUnitDef(), pos);
         }
     }
 
@@ -108,7 +108,7 @@ public class DefaultCommands {
         int facing = CommandUtil.getMapCenterFacing(aiDelegate, builder);
 //        System.err.println("facing: " + facing);
         pos = aiDelegate.findClosestBuildSite(factory, pos, DEFAULT_SEARCH_RADIUS, DEFAULT_SPACING, facing);
-        CommandUtil.queueUnit(aiDelegate, builder, factory, pos, facing);
+        builder.build(factory.getUnitDef(), pos, facing);
     }
 
     public static void queueT2Factory(AIDelegate aiDelegate, CachedUnit builder) {
@@ -123,7 +123,7 @@ public class DefaultCommands {
             int facing = CommandUtil.getMapCenterFacing(aiDelegate, builder);
             pos = aiDelegate.findClosestBuildSite(factory, pos, DEFAULT_T2_FACTORY_SEARCH_RADIUS, DEFAULT_T2_FACTORY_SPACING, facing);
             if (aiDelegate.isPossibleToBuildAt(factory, pos, facing)) {
-                CommandUtil.queueUnit(aiDelegate, builder, factory, pos, facing);
+                builder.build(factory.getUnitDef(), pos, facing);
             }
         }
     }
@@ -132,7 +132,7 @@ public class DefaultCommands {
         CachedUnitDef energyGen = BuilderUtil.getBestT1Energy(Faction.getFaction(builder.getDef()));
 //        AIFloat3 pos = getEnergyBuildPos(aiDelegate, builder, energyGen, DEFAULT_ENERGY_SEARCH_RADIUS, DEFAULT_ENERGY_SPACING);
         AIFloat3 pos = aiDelegate.findClosestBuildSite(energyGen, builder.getPos(), DEFAULT_ENERGY_SEARCH_RADIUS, DEFAULT_ENERGY_SPACING, 0);
-        CommandUtil.queueUnit(aiDelegate, builder, energyGen, pos);
+        builder.build(energyGen.getUnitDef(), pos);
     }
 
     public static boolean queueClosestMetalExtractor(AIDelegate aiDelegate, CachedUnit builder) {
@@ -150,7 +150,7 @@ public class DefaultCommands {
         for (MetalSpot metalSpot : aiDelegate.getMetalSpotManager().getMetalSpotDistance(pos, aiDelegate.getCachedUnitManager()).values()) {
             AIFloat3 metalSpotPos = aiDelegate.findClosestBuildSite(mexDef, new AIFloat3(metalSpot.getTerrainX(), 1, metalSpot.getTerrainZ()),
                     GlobalDelegate.getMetalExtractorTerrainRadius(), DEFAULT_METAL_EXTRACTOR_SPACING, 0);
-            CommandUtil.queueUnit(aiDelegate, builder, mexDef, metalSpotPos);
+            builder.build(mexDef.getUnitDef(), metalSpotPos);
             return true;
         }
         return false;
@@ -160,7 +160,7 @@ public class DefaultCommands {
 //        if (metalSpot != null) {
 //            AIFloat3 metalSpotPos = aiDelegate.findClosestBuildSite(mexDef, new AIFloat3(metalSpot.getTerrainX(), 1, metalSpot.getTerrainZ()),
 //                    CachedMetalMap.getMetalExtractorRadius(), DEFAULT_METAL_EXTRACTOR_SPACING, 0);
-//            CommandUtil.queueUnit(aiDelegate, builder, mexDef, metalSpotPos);
+//            builder.queueUnit(mexDef, metalSpotPos);
 //            return true;
 //        } else {
 //            aiDelegate.sendMessage("No avalible metal spots");
@@ -226,6 +226,6 @@ public class DefaultCommands {
     public static void queueRadar(AIDelegate aiDelegate, CachedUnit builder) {
         CachedUnitDef building = getBuildDef("Radar", builder);
         AIFloat3 pos = aiDelegate.findClosestBuildSite(building, builder.getPos(), DEFAULT_SEARCH_RADIUS, DEFAULT_SPACING, 0);
-        CommandUtil.queueUnit(aiDelegate, builder, building, pos);
+        builder.build(building.getUnitDef(), pos);
     }
 }

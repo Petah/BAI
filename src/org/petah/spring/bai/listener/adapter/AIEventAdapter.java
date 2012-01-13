@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.listener.adapter;
 
-import com.springrts.ai.oo.OOAICallback;
+import com.springrts.ai.oo.clb.OOAICallback;
 import org.petah.spring.bai.AIReturnCode;
 import org.petah.spring.bai.listener.AIEventListener;
 

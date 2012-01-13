@@ -1,6 +1,6 @@
 package org.petah.spring.bai.map.metal;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import org.petah.spring.bai.cache.CachedMetalMap;
 import java.util.Iterator;
 import java.util.LinkedList;

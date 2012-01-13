@@ -1,8 +1,3 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 //importPackage(org.petah.spring.bai);
 //importPackage(org.petah.spring.bai.cache);
 //importPackage(org.petah.spring.bai.delegate);
@@ -38,7 +33,7 @@ function scoutClosestZone(group) {
         if (unit.getCurrentCommands().size() == 0) {
             var controlZone = getClosestControlZone(zones, unit.getPos(), -5);
             if (controlZone != null) {
-                var moveTo = new com.springrts.ai.AIFloat3(controlZone.getTerrainX(), 0, controlZone.getTerrainZ());
+                var moveTo = new com.springrts.ai.oo.AIFloat3(controlZone.getTerrainX(), 0, controlZone.getTerrainZ());
                 moveTo.x += Math.random() * MapUtil.mapToTerrain(ControlZone.getSize());
                 moveTo.z += Math.random() * MapUtil.mapToTerrain(ControlZone.getSize());
                 CommandUtil.move(aiDelegate, unit, moveTo, false);

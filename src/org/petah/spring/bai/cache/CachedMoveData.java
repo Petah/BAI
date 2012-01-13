@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.cache;
 
-import com.springrts.ai.oo.MoveData;
+import com.springrts.ai.oo.clb.MoveData;
 import java.io.Serializable;
 
 /**
@@ -19,7 +19,8 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
     private float maxBreaking;
     private float maxSpeed;
     private short maxTurnRate;
-    private int size;
+    private int xSize;
+    private int zSize;
     private float depth;
     private float maxSlope;
     private float slopeMod;
@@ -39,7 +40,8 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
         maxBreaking = moveData.getMaxBreaking();
         maxSpeed = moveData.getMaxSpeed();
         maxTurnRate = moveData.getMaxTurnRate();
-        size = moveData.getSize();
+        xSize = moveData.getXSize();
+        zSize = moveData.getZSize();
         depth = moveData.getDepth();
         maxSlope = moveData.getMaxSlope();
         slopeMod = moveData.getSlopeMod();
@@ -80,7 +82,10 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
         if (this.maxTurnRate != other.maxTurnRate) {
             return false;
         }
-        if (this.size != other.size) {
+        if (this.xSize != other.xSize) {
+            return false;
+        }
+        if (this.zSize != other.zSize) {
             return false;
         }
         if (this.depth != other.depth) {
@@ -122,24 +127,25 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 29 * hash + (this.moveData != null ? this.moveData.hashCode() : 0);
-        hash = 29 * hash + (this.name != null ? this.name.hashCode() : 0);
-        hash = 29 * hash + Float.floatToIntBits(this.maxAcceleration);
-        hash = 29 * hash + Float.floatToIntBits(this.maxBreaking);
-        hash = 29 * hash + Float.floatToIntBits(this.maxSpeed);
-        hash = 29 * hash + this.maxTurnRate;
-        hash = 29 * hash + this.size;
-        hash = 29 * hash + Float.floatToIntBits(this.depth);
-        hash = 29 * hash + Float.floatToIntBits(this.maxSlope);
-        hash = 29 * hash + Float.floatToIntBits(this.slopeMod);
-        hash = 29 * hash + Float.floatToIntBits(this.depthMod);
-        hash = 29 * hash + this.pathType;
-        hash = 29 * hash + Float.floatToIntBits(this.crushStrength);
-        hash = 29 * hash + this.moveType;
-        hash = 29 * hash + this.moveFamily;
-        hash = 29 * hash + this.terrainClass;
-        hash = 29 * hash + (this.followGround ? 1 : 0);
-        hash = 29 * hash + (this.subMarine ? 1 : 0);
+        hash = 67 * hash + (this.moveData != null ? this.moveData.hashCode() : 0);
+        hash = 67 * hash + (this.name != null ? this.name.hashCode() : 0);
+        hash = 67 * hash + Float.floatToIntBits(this.maxAcceleration);
+        hash = 67 * hash + Float.floatToIntBits(this.maxBreaking);
+        hash = 67 * hash + Float.floatToIntBits(this.maxSpeed);
+        hash = 67 * hash + this.maxTurnRate;
+        hash = 67 * hash + this.xSize;
+        hash = 67 * hash + this.zSize;
+        hash = 67 * hash + Float.floatToIntBits(this.depth);
+        hash = 67 * hash + Float.floatToIntBits(this.maxSlope);
+        hash = 67 * hash + Float.floatToIntBits(this.slopeMod);
+        hash = 67 * hash + Float.floatToIntBits(this.depthMod);
+        hash = 67 * hash + this.pathType;
+        hash = 67 * hash + Float.floatToIntBits(this.crushStrength);
+        hash = 67 * hash + this.moveType;
+        hash = 67 * hash + this.moveFamily;
+        hash = 67 * hash + this.terrainClass;
+        hash = 67 * hash + (this.followGround ? 1 : 0);
+        hash = 67 * hash + (this.subMarine ? 1 : 0);
         return hash;
     }
 
@@ -183,6 +189,14 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
         return maxTurnRate;
     }
 
+    public int getXSize() {
+        return xSize;
+    }
+
+    public int getZSize() {
+        return zSize;
+    }
+
     public MoveData getMoveData() {
         return moveData;
     }
@@ -201,10 +215,6 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
 
     public int getPathType() {
         return pathType;
-    }
-
-    public int getSize() {
-        return size;
     }
 
     public float getSlopeMod() {

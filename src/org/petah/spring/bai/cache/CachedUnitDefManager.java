@@ -6,8 +6,8 @@ package org.petah.spring.bai.cache;
 
 import java.util.logging.Logger;
 import org.petah.spring.bai.unit.*;
-import com.springrts.ai.oo.OOAICallback;
-import com.springrts.ai.oo.UnitDef;
+import com.springrts.ai.oo.clb.OOAICallback;
+import com.springrts.ai.oo.clb.UnitDef;
 import java.io.File;
 import java.io.Serializable;
 import java.util.TreeMap;

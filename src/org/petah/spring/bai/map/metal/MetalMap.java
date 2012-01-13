@@ -4,7 +4,7 @@
 // */
 //package org.petah.spring.bai.map.metal;
 //
-//import com.springrts.ai.AIFloat3;
+//import com.springrts.ai.oo.AIFloat3;
 //import java.util.List;
 //import java.util.concurrent.CopyOnWriteArrayList;
 //import java.util.concurrent.Future;

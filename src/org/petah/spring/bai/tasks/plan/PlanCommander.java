@@ -4,7 +4,7 @@
  */
 package org.petah.spring.bai.tasks.plan;
 
-import com.springrts.ai.AIFloat3;
+import com.springrts.ai.oo.AIFloat3;
 import java.util.List;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
@@ -37,6 +37,10 @@ public class PlanCommander extends Task {
         super(aiDelegate);
     }
 
+    public void drawLine(AIFloat3 from, AIFloat3 to) {
+        aiDelegate.getCallback().getMap().getDrawer().addLine(from, to);
+    }
+
     public boolean update(UnitGroup group, int frame) {
         // If its time to update
         if (nextUpdate <= frame) {
@@ -51,8 +55,8 @@ public class PlanCommander extends Task {
                         CachedUnitDef building = BuilderUtil.getBestT1Energy(Faction.getFaction(builder.getDef()));
                         AIFloat3 pos = BuilderUtil.moveTowardsMapCenter(aiDelegate.getBaseCenter(), 400);
                         if (GlobalOptions.isDebug()) {
-                            CommandUtil.drawLine(aiDelegate, aiDelegate.getBaseCenter(), pos);
-                            CommandUtil.drawLine(aiDelegate, pos, BuilderUtil.moveAroundCenter(aiDelegate, pos, 90, 200));
+                            drawLine(aiDelegate.getBaseCenter(), pos);
+                            drawLine(pos, BuilderUtil.moveAroundCenter(aiDelegate, pos, 90, 200));
                         }
                         pos = BuilderUtil.moveAroundCenter(aiDelegate, pos, 90, 200);
 //                        pos = BuilderUtil.moveTowardsDirection(aiDelegate, pos, 270, 200);
@@ -61,8 +65,8 @@ public class PlanCommander extends Task {
                         CachedUnitDef building = GlobalDelegate.getUnitDef("KbotFactory", Faction.getFaction(builder.getDef()));
                         AIFloat3 pos = BuilderUtil.moveTowardsMapCenter(aiDelegate.getBaseCenter(), 400);
                         if (GlobalOptions.isDebug()) {
-                            CommandUtil.drawLine(aiDelegate, aiDelegate.getBaseCenter(), pos);
-                            CommandUtil.drawLine(aiDelegate, pos, BuilderUtil.moveAroundCenter(aiDelegate, pos, -90, 200));
+                            drawLine(aiDelegate.getBaseCenter(), pos);
+                            drawLine(pos, BuilderUtil.moveAroundCenter(aiDelegate, pos, -90, 200));
                         }
 //                        pos = BuilderUtil.moveTowardsDirection(aiDelegate, pos, 90, 200);
                         pos = BuilderUtil.moveAroundCenter(aiDelegate, pos, -90, 200);
@@ -71,7 +75,7 @@ public class PlanCommander extends Task {
                         int facing = CommandUtil.getMapCenterFacing(aiDelegate, builder);
                         List<AIFloat3> block = PlanCommands.getBlock(aiDelegate, building, pos, xSize, zSize, facing);
                         if (block.size() == xSize * zSize) {
-                            CommandUtil.queueUnit(aiDelegate, builder, building, block.get(ArrayUtil.get1DIndex(xSize / 2, zSize / 2, xSize)), facing);
+                            builder.build(building.getUnitDef(), block.get(ArrayUtil.get1DIndex(xSize / 2, zSize / 2, xSize)), facing, true);
                         }
                     }
                 }
