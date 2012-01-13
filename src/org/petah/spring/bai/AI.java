@@ -9,6 +9,7 @@ import com.springrts.ai.oo.clb.WeaponDef;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.logging.Logger;
 import org.petah.common.util.profiler.Profiler;
 import org.petah.spring.bai.delegate.AIDelegate;
 import org.petah.spring.bai.listener.AIEventListener;
@@ -25,7 +26,13 @@ import org.petah.spring.bai.listener.WeaponEventListener;
 
 public class AI implements com.springrts.ai.AI {
 
+    private final static Logger LOG = Logger.getLogger(AI.class.getName());
+
     private AIDelegate aiDelegate;
+
+    private int id = -1;
+    private int teamId = -1;
+
     private Collection<AIEventListener> aiEventListeners = new CopyOnWriteArrayList<AIEventListener>();
     private Collection<CommandEventListener> commandEventListeners = new CopyOnWriteArrayList<CommandEventListener>();
     private Collection<DamageEventListener> damageEventListeners = new CopyOnWriteArrayList<DamageEventListener>();
@@ -37,6 +44,10 @@ public class AI implements com.springrts.ai.AI {
     private Collection<UpdateEventListener> updateEventListeners = new CopyOnWriteArrayList<UpdateEventListener>();
     private Collection<WeaponEventListener> weaponEventListeners = new CopyOnWriteArrayList<WeaponEventListener>();
     private Collection<MoveEventListener> moveEventListeners = new CopyOnWriteArrayList<MoveEventListener>();
+
+    public AI() {
+        LOG.info("Created new AI.");
+    }
 
     // Private methods
     private void handleException(Exception ex) {
@@ -232,7 +243,14 @@ public class AI implements com.springrts.ai.AI {
         }
     }
 
-    public int init(int teamId, OOAICallback callback) {
+    public int init(int id, OOAICallback callback) {
+        this.id = id;
+        this.teamId = callback.getSkirmishAI().getTeamId();
+
+        callback.getGame().sendTextMessage("Im alive", 0);
+
+        Global.init(callback);
+        aiDelegate = new AIDelegate(teamId, callback, this);
         try {
             for (AIEventListener aiEventListener : aiEventListeners) {
                 Profiler.start(AI.class, aiDelegate.getPrefix() + aiEventListener.getClass().getSimpleName() + ".init()");

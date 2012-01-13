@@ -15,6 +15,8 @@ import org.petah.spring.bai.util.CustomOptionIO;
  */
 public class GlobalOptions {
 
+    private final static Logger LOG = Logger.getLogger(AI.class.getName());
+
     // Test options IO
     public static void main(String[] args) {
         CustomOptionIO.save(new File("testsettings.xml"));
@@ -38,7 +40,7 @@ public class GlobalOptions {
             new Option<String>("values", "true, false"));
 
     public static synchronized void parseLua(OOAICallback callback) {
-        Logger.getLogger(GlobalOptions.class.getName()).entering(GlobalOptions.class.getName(), "parseLua()");
+        LOG.entering(GlobalOptions.class.getName(), "parseLua()");
         if (!ready) {
             Info info = callback.getSkirmishAI().getInfo();
             for (int i = 0; i < info.getSize(); i++) {
@@ -46,7 +48,7 @@ public class GlobalOptions {
                 String value = info.getValue(i);
                 OptionsManager.getOption(new Option<String>(name, value),
                         new Option<Boolean>("transient", true));
-                Logger.getLogger(GlobalOptions.class.getName()).info("Set AI info: " + name + " = " + value);
+                LOG.info("Set AI info: " + name + " = " + value);
             }
 
             OptionValues options = callback.getSkirmishAI().getOptionValues();
@@ -55,7 +57,7 @@ public class GlobalOptions {
                 String value = options.getValue(i);
                 OptionsManager.getOption(new Option<String>(name, value),
                         new Option<Boolean>("transient", true));
-                Logger.getLogger(GlobalOptions.class.getName()).info("Set option: " + name + " = " + value);
+                LOG.info("Set option: " + name + " = " + value);
             }
             ready = true;
         }
