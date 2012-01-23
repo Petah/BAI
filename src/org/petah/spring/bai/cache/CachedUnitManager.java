@@ -27,14 +27,13 @@ public class CachedUnitManager implements UnitEventListener,
     private ConcurrentHashMap<Integer, CachedUnit> enemyUnits = new ConcurrentHashMap<Integer, CachedUnit>();
 
     // Public methods
-    public int update(int frame) {
+    public void update(int frame) {
         for (CachedUnit unit : friendlyUnits.values()) {
             unit.update(frame);
         }
         for (CachedUnit unit : enemyUnits.values()) {
             unit.update(frame);
         }
-        return AIReturnCode.NORMAL;
     }
 
     // List accessors/mutators
@@ -65,62 +64,50 @@ public class CachedUnitManager implements UnitEventListener,
     }
 
     // Implemented methods
-    public int unitCaptured(Unit unit, int oldTeamId, int newTeamId) {
+    public void unitCaptured(Unit unit, int oldTeamId, int newTeamId) {
         addFriendlyUnit(unit);
-        return AIReturnCode.NORMAL;
     }
 
-    public int unitCreated(Unit unit, Unit builder) {
+    public void unitCreated(Unit unit, Unit builder) {
         addFriendlyUnit(unit);
-        return AIReturnCode.NORMAL;
     }
 
-    public int unitFinished(Unit unit) {
+    public void unitFinished(Unit unit) {
         addFriendlyUnit(unit);
-        return AIReturnCode.NORMAL;
     }
 
-    public int unitGiven(Unit unit, int oldTeamId, int newTeamId) {
+    public void unitGiven(Unit unit, int oldTeamId, int newTeamId) {
         addFriendlyUnit(unit);
-        return AIReturnCode.NORMAL;
     }
 
-    public int enemyEnterLOS(Unit enemy) {
+    public void enemyEnterLOS(Unit enemy) {
         addEnemyUnit(enemy);
-        return AIReturnCode.NORMAL;
     }
 
-    public int enemyEnterRadar(Unit enemy) {
+    public void enemyEnterRadar(Unit enemy) {
         addEnemyUnit(enemy);
-        return AIReturnCode.NORMAL;
     }
 
-    public int enemyLeaveLOS(Unit enemy) {
+    public void enemyLeaveLOS(Unit enemy) {
         removeEnemyUnit(enemy);
-        return AIReturnCode.NORMAL;
     }
 
-    public int enemyLeaveRadar(Unit enemy) {
+    public void enemyLeaveRadar(Unit enemy) {
         removeEnemyUnit(enemy);
-        return AIReturnCode.NORMAL;
     }
 
-    public int enemyDamaged(Unit enemy, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
-        return AIReturnCode.NORMAL;
+    public void enemyDamaged(Unit enemy, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
     }
 
-    public int enemyDestroyed(Unit enemy, Unit attacker) {
+    public void enemyDestroyed(Unit enemy, Unit attacker) {
         removeEnemyUnit(enemy);
-        return AIReturnCode.NORMAL;
     }
 
-    public int unitDamaged(Unit unit, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
-        return AIReturnCode.NORMAL;
+    public void unitDamaged(Unit unit, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
     }
 
-    public int unitDestroyed(Unit unit, Unit attacker) {
+    public void unitDestroyed(Unit unit, Unit attacker) {
         removeFriendlyUnit(unit);
-        return AIReturnCode.NORMAL;
     }
 
     // Getters

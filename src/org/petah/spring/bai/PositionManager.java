@@ -27,20 +27,19 @@ public class PositionManager extends UnitEventAdapter {
 
     public PositionManager(AIDelegate aiDelegate) {
         this.aiDelegate = aiDelegate;
-        aiDelegate.getAIEventHandler().addUnitEventListener(this);
+//        aiDelegate.getAIEventHandler().addUnitEventListener(this);
     }
 
     // Implemented methods
     @Override
-    public int unitFinished(Unit unit) {
+    public void unitFinished(Unit unit) {
         AIFloat3 pos = unit.getPos();
         baseCenter = pos;
         startDirection = GameMath.pointDirection(pos.x, pos.y,
                 MapUtil.mapToTerrain(GlobalDelegate.getMapWidth() / 2),
                 MapUtil.mapToTerrain(GlobalDelegate.getMapHeight() / 2));
         startSide = Compass.fromAngle(startDirection);
-        aiDelegate.getAIEventHandler().removeUnitEventListener(this);
-        return AIReturnCode.NORMAL;
+//        aiDelegate.getAIEventHandler().removeUnitEventListener(this);
     }
 
     // Getters

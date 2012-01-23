@@ -12,7 +12,7 @@ import com.springrts.ai.oo.clb.OOAICallback;
  */
 public interface AIEventListener {
 
-    public int init(int teamId, OOAICallback callback);
+    public void init(int teamId, OOAICallback callback);
 
-    public int release(int reason);
+    public void release(int reason);
 }

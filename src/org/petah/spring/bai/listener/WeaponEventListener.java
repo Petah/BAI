@@ -13,5 +13,5 @@ import com.springrts.ai.oo.clb.WeaponDef;
  */
 public interface WeaponEventListener {
 
-    public int weaponFired(Unit unit, WeaponDef weaponDef);
+    public void weaponFired(Unit unit, WeaponDef weaponDef);
 }

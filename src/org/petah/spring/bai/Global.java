@@ -4,6 +4,7 @@ import com.springrts.ai.oo.clb.OOAICallback;
 import org.petah.common.util.profiler.Profiler;
 import org.petah.spring.bai.delegate.GlobalDelegate;
 import org.petah.spring.bai.gui.GUIManager;
+import org.petah.spring.bai.log.Log;
 import org.petah.spring.bai.unit.UnitInfo;
 
 public class Global {
@@ -11,11 +12,12 @@ public class Global {
     private static boolean inited = false;
 
     public static void init(OOAICallback callback) {
+        Log.entry(Global.class, "init");
         if (inited) {
             return;
         }
         inited = true;
-
+        
         Profiler.start(Global.class, "init()");
 
         // Initialise global options and information logger

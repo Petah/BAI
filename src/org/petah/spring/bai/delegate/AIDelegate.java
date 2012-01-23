@@ -12,7 +12,7 @@ import com.springrts.ai.oo.clb.Resource;
 import java.util.List;
 import java.util.logging.Logger;
 import org.petah.common.util.profiler.Profiler;
-import org.petah.spring.bai.AI;
+import org.petah.spring.bai.BAI;
 import org.petah.spring.bai.LocalCommandHandler;
 import org.petah.spring.bai.MoveFailHandler;
 import org.petah.spring.bai.AIOvermind;
@@ -26,6 +26,7 @@ import org.petah.spring.bai.factory.TeamDelegateFactory;
 import org.petah.spring.bai.group.DefaultGroupManager;
 import org.petah.spring.bai.group.GroupManager;
 import org.petah.spring.bai.gui.GUIManager;
+import org.petah.spring.bai.log.Log;
 import org.petah.spring.bai.map.control.ControlZone;
 import org.petah.spring.bai.map.metal.MetalSpotManager;
 import org.petah.spring.bai.util.Compass;
@@ -40,7 +41,7 @@ public class AIDelegate {
 
     private AIOvermind aiOvermind;
     // Handlers
-    private AI aiEventHandler;
+    private BAI aiEventHandler;
     private LocalCommandHandler localCommandHandler;
     private MoveFailHandler moveFailHandler;
     // Delegates
@@ -57,7 +58,8 @@ public class AIDelegate {
     private int allianceID;
 
     // Constructors
-    public AIDelegate(int teamID, OOAICallback callback, AI aiEventHandler) {
+    public AIDelegate(int teamID, OOAICallback callback, BAI aiEventHandler) {
+        Log.entry(AIDelegate.class, "AIDelegate");
         Profiler.start(AIDelegate.class, "AIDelegate()");
         this.teamID = teamID;
         this.callback = callback;
@@ -65,17 +67,17 @@ public class AIDelegate {
         this.map = callback.getMap();
         this.aiEventHandler = aiEventHandler;
         this.allianceID = callback.getGame().getMyAllyTeam();
-        aiEventHandler.setAiDelegate(this);
+//        aiEventHandler.setAiDelegate(this);
         teamDelegate = TeamDelegateFactory.getTeamDelegate(this);
-        // Add event listeners for each AI so they are always updated while at least one AI is alive.
+        // Add event listeners for each BAI so they are always updated while at least one BAI is alive.
         // Unit events wont be duplicated because of mapping the unit ID to the map key
-        aiEventHandler.addUnitEventListener(teamDelegate.getCachedUnitManager());
-        aiEventHandler.addEnemyEventListener(teamDelegate.getCachedUnitManager());
-        aiEventHandler.addDamageEventListener(teamDelegate.getCachedUnitManager());
+//        aiEventHandler.addUnitEventListener(teamDelegate.getCachedUnitManager());
+//        aiEventHandler.addEnemyEventListener(teamDelegate.getCachedUnitManager());
+//        aiEventHandler.addDamageEventListener(teamDelegate.getCachedUnitManager());
         // Update events wont be called twice due to the update delay timer
-        aiEventHandler.addUpdateEventListener(teamDelegate.getCachedUnitManager());
-        aiEventHandler.addUpdateEventListener(teamDelegate.getControlMap());
-        aiEventHandler.addUpdateEventListener(teamDelegate.getTargetMap());
+//        aiEventHandler.addUpdateEventListener(teamDelegate.getCachedUnitManager());
+//        aiEventHandler.addUpdateEventListener(teamDelegate.getControlMap());
+//        aiEventHandler.addUpdateEventListener(teamDelegate.getTargetMap());
         groupManager = new DefaultGroupManager(this);
         positionManager = new PositionManager(this);
         localCommandHandler = new LocalCommandHandler(this);
@@ -172,7 +174,7 @@ public class AIDelegate {
     }
 
     // Getters
-    public AI getAIEventHandler() {
+    public BAI getAIEventHandler() {
         return aiEventHandler;
     }
 

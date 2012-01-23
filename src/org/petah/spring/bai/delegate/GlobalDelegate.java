@@ -15,6 +15,7 @@ import org.petah.spring.bai.cache.CachedMoveDataManager;
 import org.petah.spring.bai.cache.CachedSlopeMap;
 import org.petah.spring.bai.cache.CachedUnitDef;
 import org.petah.spring.bai.cache.CachedUnitDefManager;
+import org.petah.spring.bai.log.Log;
 import org.petah.spring.bai.map.slope.IslandMap;
 import org.petah.spring.bai.map.slope.IslandMapManager;
 import org.petah.spring.bai.unit.Faction;
@@ -34,6 +35,7 @@ public class GlobalDelegate {
     private static IslandMapManager islandMapManager;
 
     public static void init(OOAICallback callback) {
+        Log.entry(GlobalDelegate.class, "init");
         // All are dependant on InformationLogger for the cache directory
         cachedMap = new CachedMap(callback.getMap());
         cachedMetalMap = new CachedMetalMap(callback.getMap());

@@ -12,11 +12,11 @@ import com.springrts.ai.oo.clb.Unit;
  */
 public interface UnitEventListener {
 
-    public int unitCaptured(Unit unit, int oldTeamId, int newTeamId);
+    public void unitCaptured(Unit unit, int oldTeamId, int newTeamId);
 
-    public int unitCreated(Unit unit, Unit builder);
+    public void unitCreated(Unit unit, Unit builder);
 
-    public int unitFinished(Unit unit);
+    public void unitFinished(Unit unit);
 
-    public int unitGiven(Unit unit, int oldTeamId, int newTeamId);
+    public void unitGiven(Unit unit, int oldTeamId, int newTeamId);
 }

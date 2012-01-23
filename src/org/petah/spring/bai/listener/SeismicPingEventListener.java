@@ -12,5 +12,5 @@ import com.springrts.ai.oo.AIFloat3;
  */
 public interface SeismicPingEventListener {
 
-    public int seismicPing(AIFloat3 pos, float strength);
+    public void seismicPing(AIFloat3 pos, float strength);
 }

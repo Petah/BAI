@@ -29,7 +29,7 @@ import org.petah.spring.bai.unit.UnitType;
 public class CachedUnit implements Serializable {
 
     // Serialization ID
-    public static final long serialVersionUID = 2L;
+    public static final long serialVersionUID = 3L;
 
     // Option definitions
     public static final short OPT_NONE = 0;

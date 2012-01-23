@@ -10,5 +10,5 @@ package org.petah.spring.bai.listener;
  */
 public interface UpdateEventListener {
 
-    public int update(int frame);
+    public void update(int frame);
 }

@@ -29,16 +29,14 @@ public class MoveFailHandler implements MoveEventListener {
         this.aiDelegate = aiDelegate;
     }
 
-    public int unitIdle(Unit unit) {
-        return AIReturnCode.NORMAL;
+    public void unitIdle(Unit unit) {
     }
 
-    public int unitMoveFailed(Unit unit) {
+    public void unitMoveFailed(Unit unit) {
         CachedUnit cachedUnit = aiDelegate.getCachedUnit(unit.getUnitId());
         AIFloat3 pos = cachedUnit.getPos();
         pos.x += Math.random() * moveDistance.getValue();
         pos.z += Math.random() * moveDistance.getValue();
         cachedUnit.moveTo(pos);
-        return AIReturnCode.NORMAL;
     }
 }

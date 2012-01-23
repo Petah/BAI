@@ -29,7 +29,7 @@ public class LocalCommandHandler implements MessageEventListener {
 
     public LocalCommandHandler(AIDelegate aiDelegate) {
         this.aiDelegate = aiDelegate;
-        aiDelegate.getAIEventHandler().addMessageEventListener(this);
+//        aiDelegate.getAIEventHandler().addMessageEventListener(this);
     }
 
     private boolean checkArgument(String argument) {
@@ -50,12 +50,11 @@ public class LocalCommandHandler implements MessageEventListener {
         return false;
     }
 
-    public int message(int player, String message) {
+    public void message(Integer player, String message) {
         if (message.startsWith(ArgumentParser.getArgumentPrefix())) {
             GlobalCommandHandler.processCommand(aiDelegate, player, message);
             processCommand(message);
         }
-        return AIReturnCode.NORMAL;
     }
 
     private void processCommand(String message) {

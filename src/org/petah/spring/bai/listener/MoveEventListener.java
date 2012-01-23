@@ -12,7 +12,7 @@ import com.springrts.ai.oo.clb.Unit;
  */
 public interface MoveEventListener {
 
-    public int unitIdle(Unit unit);
+    public void unitIdle(Unit unit);
 
-    public int unitMoveFailed(Unit unit);
+    public void unitMoveFailed(Unit unit);
 }

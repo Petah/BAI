@@ -10,6 +10,6 @@ package org.petah.spring.bai.listener;
  */
 public interface IOEventListener {
 
-    public int load(String file);
-    public int save(String file);
+    public void load(String file);
+    public void save(String file);
 }

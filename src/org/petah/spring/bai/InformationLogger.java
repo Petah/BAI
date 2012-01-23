@@ -21,6 +21,7 @@ import org.petah.common.util.profiler.Memory;
 import org.petah.common.util.profiler.Profiler;
 import org.petah.spring.bai.delegate.AIDelegate;
 import org.petah.spring.bai.gui.GUIManager;
+import org.petah.spring.bai.log.Log;
 import org.petah.spring.bai.util.CustomLogHandler;
 import org.petah.spring.bai.util.CustomProfileHandler;
 
@@ -101,6 +102,7 @@ public class InformationLogger {
     }
 
     public static void init() {
+        Log.entry(InformationLogger.class, "init");
         // Set up the loggers
         Logger.getLogger(InformationLogger.class.getName()).entering(InformationLogger.class.getName(), "init()");
         Logger.getLogger("org.petah").addHandler(new CustomLogHandler());

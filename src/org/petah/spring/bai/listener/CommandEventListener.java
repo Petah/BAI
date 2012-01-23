@@ -14,7 +14,7 @@ import java.util.List;
  */
 public interface CommandEventListener {
 
-    public int commandFinished(Unit unit, int commandId, int commandTopicId);
+    public void commandFinished(Unit unit, int commandId, int commandTopicId);
 
-    public int playerCommand(List<Unit> units, Command command, int playerId);
+    public void playerCommand(List<Unit> units, Command command, int playerId);
 }

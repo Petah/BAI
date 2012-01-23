@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.logging.Logger;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
+import org.petah.spring.bai.log.Log;
 import org.petah.spring.bai.util.CustomOptionIO;
 
 /**
@@ -15,7 +16,7 @@ import org.petah.spring.bai.util.CustomOptionIO;
  */
 public class GlobalOptions {
 
-    private final static Logger LOG = Logger.getLogger(AI.class.getName());
+    private final static Logger LOG = Logger.getLogger(BAI.class.getName());
 
     // Test options IO
     public static void main(String[] args) {
@@ -40,7 +41,7 @@ public class GlobalOptions {
             new Option<String>("values", "true, false"));
 
     public static synchronized void parseLua(OOAICallback callback) {
-        LOG.entering(GlobalOptions.class.getName(), "parseLua()");
+        Log.entry(GlobalOptions.class, "parseLua");
         if (!ready) {
             Info info = callback.getSkirmishAI().getInfo();
             for (int i = 0; i < info.getSize(); i++) {

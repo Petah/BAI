@@ -15,10 +15,10 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
 
     private transient MoveData moveData;
     private String name;
-    private float maxAcceleration;
-    private float maxBreaking;
-    private float maxSpeed;
-    private short maxTurnRate;
+//    private float maxAcceleration;
+//    private float maxBreaking;
+//    private float maxSpeed;
+//    private short maxTurnRate;
     private int xSize;
     private int zSize;
     private float depth;
@@ -36,10 +36,10 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
     public CachedMoveData(MoveData moveData) {
         this.moveData = moveData;
         name = moveData.getName();
-        maxAcceleration = moveData.getMaxAcceleration();
-        maxBreaking = moveData.getMaxBreaking();
-        maxSpeed = moveData.getMaxSpeed();
-        maxTurnRate = moveData.getMaxTurnRate();
+//        maxAcceleration = moveData.getMaxAcceleration();
+//        maxBreaking = moveData.getMaxBreaking();
+//        maxSpeed = moveData.getMaxSpeed();
+//        maxTurnRate = moveData.getMaxTurnRate();
         xSize = moveData.getXSize();
         zSize = moveData.getZSize();
         depth = moveData.getDepth();
@@ -70,40 +70,28 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
         if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
             return false;
         }
-        if (this.maxAcceleration != other.maxAcceleration) {
-            return false;
-        }
-        if (this.maxBreaking != other.maxBreaking) {
-            return false;
-        }
-        if (this.maxSpeed != other.maxSpeed) {
-            return false;
-        }
-        if (this.maxTurnRate != other.maxTurnRate) {
-            return false;
-        }
         if (this.xSize != other.xSize) {
             return false;
         }
         if (this.zSize != other.zSize) {
             return false;
         }
-        if (this.depth != other.depth) {
+        if (Float.floatToIntBits(this.depth) != Float.floatToIntBits(other.depth)) {
             return false;
         }
-        if (this.maxSlope != other.maxSlope) {
+        if (Float.floatToIntBits(this.maxSlope) != Float.floatToIntBits(other.maxSlope)) {
             return false;
         }
-        if (this.slopeMod != other.slopeMod) {
+        if (Float.floatToIntBits(this.slopeMod) != Float.floatToIntBits(other.slopeMod)) {
             return false;
         }
-        if (this.depthMod != other.depthMod) {
+        if (Float.floatToIntBits(this.depthMod) != Float.floatToIntBits(other.depthMod)) {
             return false;
         }
         if (this.pathType != other.pathType) {
             return false;
         }
-        if (this.crushStrength != other.crushStrength) {
+        if (Float.floatToIntBits(this.crushStrength) != Float.floatToIntBits(other.crushStrength)) {
             return false;
         }
         if (this.moveType != other.moveType) {
@@ -127,27 +115,25 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + (this.moveData != null ? this.moveData.hashCode() : 0);
-        hash = 67 * hash + (this.name != null ? this.name.hashCode() : 0);
-        hash = 67 * hash + Float.floatToIntBits(this.maxAcceleration);
-        hash = 67 * hash + Float.floatToIntBits(this.maxBreaking);
-        hash = 67 * hash + Float.floatToIntBits(this.maxSpeed);
-        hash = 67 * hash + this.maxTurnRate;
-        hash = 67 * hash + this.xSize;
-        hash = 67 * hash + this.zSize;
-        hash = 67 * hash + Float.floatToIntBits(this.depth);
-        hash = 67 * hash + Float.floatToIntBits(this.maxSlope);
-        hash = 67 * hash + Float.floatToIntBits(this.slopeMod);
-        hash = 67 * hash + Float.floatToIntBits(this.depthMod);
-        hash = 67 * hash + this.pathType;
-        hash = 67 * hash + Float.floatToIntBits(this.crushStrength);
-        hash = 67 * hash + this.moveType;
-        hash = 67 * hash + this.moveFamily;
-        hash = 67 * hash + this.terrainClass;
-        hash = 67 * hash + (this.followGround ? 1 : 0);
-        hash = 67 * hash + (this.subMarine ? 1 : 0);
+        hash = 13 * hash + (this.moveData != null ? this.moveData.hashCode() : 0);
+        hash = 13 * hash + (this.name != null ? this.name.hashCode() : 0);
+        hash = 13 * hash + this.xSize;
+        hash = 13 * hash + this.zSize;
+        hash = 13 * hash + Float.floatToIntBits(this.depth);
+        hash = 13 * hash + Float.floatToIntBits(this.maxSlope);
+        hash = 13 * hash + Float.floatToIntBits(this.slopeMod);
+        hash = 13 * hash + Float.floatToIntBits(this.depthMod);
+        hash = 13 * hash + this.pathType;
+        hash = 13 * hash + Float.floatToIntBits(this.crushStrength);
+        hash = 13 * hash + this.moveType;
+        hash = 13 * hash + this.moveFamily;
+        hash = 13 * hash + this.terrainClass;
+        hash = 13 * hash + (this.followGround ? 1 : 0);
+        hash = 13 * hash + (this.subMarine ? 1 : 0);
         return hash;
     }
+
+    
 
     public int compareTo(CachedMoveData other) {
         return name.compareTo(other.name);
@@ -169,25 +155,25 @@ public class CachedMoveData implements Serializable, Comparable<CachedMoveData> 
         return followGround;
     }
 
-    public float getMaxAcceleration() {
-        return maxAcceleration;
-    }
-
-    public float getMaxBreaking() {
-        return maxBreaking;
-    }
+//    public float getMaxAcceleration() {
+//        return maxAcceleration;
+//    }
+//
+//    public float getMaxBreaking() {
+//        return maxBreaking;
+//    }
 
     public float getMaxSlope() {
         return maxSlope;
     }
 
-    public float getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public short getMaxTurnRate() {
-        return maxTurnRate;
-    }
+//    public float getMaxSpeed() {
+//        return maxSpeed;
+//    }
+//
+//    public short getMaxTurnRate() {
+//        return maxTurnRate;
+//    }
 
     public int getXSize() {
         return xSize;

@@ -6,10 +6,10 @@ import java.util.LinkedList;
 import java.util.TreeMap;
 import org.petah.common.util.GameMath;
 import org.petah.common.util.profiler.Profiler;
+import org.petah.spring.bai.ResourceManager;
 import org.petah.spring.bai.cache.CachedUnit;
 import org.petah.spring.bai.cache.CachedUnitManager;
 import org.petah.spring.bai.delegate.GlobalDelegate;
-import org.petah.spring.bai.util.FormatUtil;
 
 /**
  *
@@ -61,7 +61,7 @@ public class MetalSpotManager {
     }
 
     public boolean isMetalSpotCaptured(MetalSpot metalSpot, CachedUnit unit) {
-        if (unit.getDef() != null && unit.getDef().getExtractsMetal() > 0) {
+        if (unit.getDef() != null && unit.getDef().getUnitDef().getExtractsResource(ResourceManager.getMetal()) > 0) {
             AIFloat3 pos = unit.getPos();
             float distance = GameMath.pointDistance(pos.x, pos.z, metalSpot.getTerrainX(), metalSpot.getTerrainZ());
             if (distance <= GlobalDelegate.getMetalExtractorTerrainRadius()) {

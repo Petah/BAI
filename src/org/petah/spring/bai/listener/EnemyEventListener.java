@@ -12,11 +12,11 @@ import com.springrts.ai.oo.clb.Unit;
  */
 public interface EnemyEventListener {
 
-    public int enemyEnterLOS(Unit enemy);
+    public void enemyEnterLOS(Unit enemy);
 
-    public int enemyEnterRadar(Unit enemy);
+    public void enemyEnterRadar(Unit enemy);
 
-    public int enemyLeaveLOS(Unit enemy);
+    public void enemyLeaveLOS(Unit enemy);
 
-    public int enemyLeaveRadar(Unit enemy);
+    public void enemyLeaveRadar(Unit enemy);
 }

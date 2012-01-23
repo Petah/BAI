@@ -11,6 +11,7 @@ import org.petah.common.option.OptionsManager;
 import org.petah.common.util.profiler.Profiler;
 import org.petah.spring.bai.delegate.AIDelegate;
 import org.petah.spring.bai.listener.UpdateEventListener;
+import org.petah.spring.bai.log.Log;
 
 /**
  *
@@ -38,10 +39,11 @@ public class ResourceManager implements UpdateEventListener {
     public ResourceManager(AIDelegate aiDelegate) {
         this.aiDelegate = aiDelegate;
         economy = aiDelegate.getEconomy();
-        aiDelegate.getAIEventHandler().addUpdateEventListener(this);
+//        aiDelegate.getAIEventHandler().addUpdateEventListener(this);
     }
 
     public static void parseResources(OOAICallback callback) {
+        Log.entry(ResourceManager.class, "parseResources");
         Logger.getLogger(ResourceManager.class.getName()).entering(ResourceManager.class.getName(), "init()");
         minWind = callback.getMap().getMinWind();
         maxWind = callback.getMap().getMaxWind();
@@ -58,7 +60,7 @@ public class ResourceManager implements UpdateEventListener {
         }
     }
 
-    public int update(int frame) {
+    public void update(int frame) {
         Profiler.start(ResourceManager.class, "update()");
         if (nextUpdate <= frame) {
             nextUpdate = frame + updateTime.getValue();
@@ -89,7 +91,6 @@ public class ResourceManager implements UpdateEventListener {
             }
         }
         Profiler.stop(ResourceManager.class, "update()");
-        return AIReturnCode.NORMAL;
     }
     // Metal
 

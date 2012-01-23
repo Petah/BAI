@@ -14,11 +14,11 @@ import com.springrts.ai.oo.clb.WeaponDef;
  */
 public interface DamageEventListener {
 
-    public int enemyDamaged(Unit enemy, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer);
+    public void enemyDamaged(Unit enemy, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer);
 
-    public int enemyDestroyed(Unit enemy, Unit attacker);
+    public void enemyDestroyed(Unit enemy, Unit attacker);
 
-    public int unitDamaged(Unit unit, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer);
+    public void unitDamaged(Unit unit, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer);
 
-    public int unitDestroyed(Unit unit, Unit attacker);
+    public void unitDestroyed(Unit unit, Unit attacker);
 }

@@ -1,14 +1,10 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package org.petah.spring.bai.listener;
 
 /**
  *
- * @author davnei06
+ * @author David Neilsen
  */
-public interface MessageEventListener {
+public interface MessageEventListener extends EventListener {
 
-    public int message(int player, String message);
+    public void message(Integer player, String message);
 }

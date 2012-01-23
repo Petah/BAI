@@ -14,19 +14,15 @@ import org.petah.spring.bai.listener.UnitEventListener;
  */
 public class UnitEventAdapter implements UnitEventListener {
 
-    public int unitCaptured(Unit unit, int oldTeamId, int newTeamId) {
-        return AIReturnCode.NORMAL;
+    public void unitCaptured(Unit unit, int oldTeamId, int newTeamId) {
     }
 
-    public int unitCreated(Unit unit, Unit builder) {
-        return AIReturnCode.NORMAL;
+    public void unitCreated(Unit unit, Unit builder) {
     }
 
-    public int unitFinished(Unit unit) {
-        return AIReturnCode.NORMAL;
+    public void unitFinished(Unit unit) {
     }
 
-    public int unitGiven(Unit unit, int oldTeamId, int newTeamId) {
-        return AIReturnCode.NORMAL;
+    public void unitGiven(Unit unit, int oldTeamId, int newTeamId) {
     }
 }

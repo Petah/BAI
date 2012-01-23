@@ -8,14 +8,12 @@ import java.util.logging.Logger;
 import org.petah.spring.bai.unit.*;
 import com.springrts.ai.oo.clb.OOAICallback;
 import com.springrts.ai.oo.clb.UnitDef;
-import java.io.File;
 import java.io.Serializable;
 import java.util.TreeMap;
 import org.petah.common.option.Option;
 import org.petah.common.option.OptionsManager;
 import org.petah.common.util.profiler.Profiler;
-import org.petah.spring.bai.InformationLogger;
-import org.petah.spring.bai.util.IOUtil;
+import org.petah.spring.bai.log.Log;
 
 /**
  * Manages a list of cached unit defs. Saves/loads the list of cached unit defs to
@@ -41,24 +39,25 @@ public class CachedUnitDefManager implements Serializable {
 //    }
     public CachedUnitDefManager(OOAICallback callback) {
         Profiler.start(CachedUnitDefManager.class, "CachedUnitDefManager()");
-        File file = new File(InformationLogger.getCacheDirectory().getAbsolutePath() + File.separator +
-                callback.getMod().getFileName() + "." + serialVersionUID + ".unitdef.bin");
-        CachedUnitDefManager loadedObject = (CachedUnitDefManager) IOUtil.loadCacheFile(cacheToDisk, file);
-        if (loadedObject != null) {
-            unitDefs = loadedObject.unitDefs;
-            // Update the transient properties
-            for (UnitDef def : callback.getUnitDefs()) {
-                getCachedUnitDef(def.getUnitDefId()).setDef(def);
-            }
-            Logger.getLogger(CachedUnitDefManager.class.getName()).info("Loaded unit defs from cache.");
-        } else {
+        // Disabled caching because of crash
+//        File file = new File(InformationLogger.getCacheDirectory().getAbsolutePath() + File.separator +
+//                callback.getMod().getFileName() + "." + serialVersionUID + ".unitdef.bin");
+//        CachedUnitDefManager loadedObject = (CachedUnitDefManager) IOUtil.loadCacheFile(cacheToDisk, file);
+//        if (loadedObject != null) {
+//            unitDefs = loadedObject.unitDefs;
+//            // Update the transient properties
+//            for (UnitDef def : callback.getUnitDefs()) {
+//                getCachedUnitDef(def.getUnitDefId()).setDef(def);
+//            }
+//            Logger.getLogger(CachedUnitDefManager.class.getName()).info("Loaded unit defs from cache.");
+//        } else {
             // For each unit def add it to the unit def map
             for (UnitDef def : callback.getUnitDefs()) {
                 unitDefs.put(def.getUnitDefId(), new CachedUnitDef(def));
             }
             Logger.getLogger(CachedUnitDefManager.class.getName()).info("Processed unit defs.");
-        }
-        IOUtil.saveCacheFile(cacheToDisk, file, this);
+//        }
+//        IOUtil.saveCacheFile(cacheToDisk, file, this);
         Profiler.stop(CachedUnitDefManager.class, "CachedUnitDefManager()");
     }
 

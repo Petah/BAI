@@ -14,11 +14,9 @@ import org.petah.spring.bai.listener.AIEventListener;
  */
 public class AIEventAdapter implements AIEventListener {
 
-    public int init(int teamId, OOAICallback callback) {
-        return AIReturnCode.NORMAL;
+    public void init(int teamId, OOAICallback callback) {
     }
 
-    public int release(int reason) {
-        return AIReturnCode.NORMAL;
+    public void release(int reason) {
     }
 }

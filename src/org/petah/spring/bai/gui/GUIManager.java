@@ -17,6 +17,7 @@ import org.petah.spring.bai.ThreadManager;
 import org.petah.spring.bai.delegate.AIDelegate;
 import org.petah.spring.bai.delegate.GlobalDelegate;
 import org.petah.spring.bai.delegate.TeamDelegate;
+import org.petah.spring.bai.log.Log;
 
 /**
  *
@@ -37,6 +38,7 @@ public class GUIManager {
     private static PMemoryMonitor memoryMonitor;
 
     public static void init() {
+        Log.entry(GUIManager.class, "init");
         Logger.getLogger(GUIManager.class.getName()).entering(GUIManager.class.getName(), "init()");
         if (enabled.getValue()) {
             frame = new MainFrame("BAI");

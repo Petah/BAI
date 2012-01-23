@@ -34,9 +34,9 @@ public abstract class GroupManager implements UnitEventListener, DamageEventList
         Profiler.start(getClass(), "GroupManager()");
         this.aiDelegate = aiDelegate;
         initGroups();
-        aiDelegate.getAIEventHandler().addUnitEventListener(this);
-        aiDelegate.getAIEventHandler().addDamageEventListener(this);
-        aiDelegate.getAIEventHandler().addUpdateEventListener(this);
+//        aiDelegate.getAIEventHandler().addUnitEventListener(this);
+//        aiDelegate.getAIEventHandler().addDamageEventListener(this);
+//        aiDelegate.getAIEventHandler().addUpdateEventListener(this);
         Profiler.stop(getClass(), "GroupManager()");
     }
 
@@ -74,7 +74,7 @@ public abstract class GroupManager implements UnitEventListener, DamageEventList
         groups.put(group.getName().toLowerCase(), group);
     }
 
-    public int update(int frame) {
+    public void update(int frame) {
         // Use an iterator to get the key (group name) for profiling
         Iterator<String> i = groups.keySet().iterator();
         while (i.hasNext()) {
@@ -84,7 +84,6 @@ public abstract class GroupManager implements UnitEventListener, DamageEventList
             group.update(frame);
             Profiler.stop(GroupManager.class, aiDelegate.getPrefix() + groupName + ".update()");
         }
-        return AIReturnCode.NORMAL;
     }
 
     public UnitGroup getGroup(String name) {
@@ -98,35 +97,32 @@ public abstract class GroupManager implements UnitEventListener, DamageEventList
     }
 
     // Implemented methods
-    public int unitCaptured(Unit unit, int oldTeamId, int newTeamId) {
-        return addUnit(unit);
+    public void unitCaptured(Unit unit, int oldTeamId, int newTeamId) {
+        addUnit(unit);
     }
 
-    public int unitCreated(Unit unit, Unit builder) {
-        return addUnit(unit);
+    public void unitCreated(Unit unit, Unit builder) {
+        addUnit(unit);
     }
 
-    public int unitFinished(Unit unit) {
-        return addUnit(unit);
+    public void unitFinished(Unit unit) {
+        addUnit(unit);
     }
 
-    public int unitGiven(Unit unit, int oldTeamId, int newTeamId) {
-        return addUnit(unit);
+    public void unitGiven(Unit unit, int oldTeamId, int newTeamId) {
+        addUnit(unit);
     }
 
-    public int enemyDamaged(Unit enemy, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
-        return AIReturnCode.NORMAL;
+    public void enemyDamaged(Unit enemy, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
     }
 
-    public int enemyDestroyed(Unit enemy, Unit attacker) {
-        return AIReturnCode.NORMAL;
+    public void enemyDestroyed(Unit enemy, Unit attacker) {
     }
 
-    public int unitDamaged(Unit unit, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
-        return AIReturnCode.NORMAL;
+    public void unitDamaged(Unit unit, Unit attacker, float damage, AIFloat3 dir, WeaponDef weaponDef, boolean paralyzer) {
     }
 
-    public int unitDestroyed(Unit unit, Unit attacker) {
-        return removeUnit(unit);
+    public void unitDestroyed(Unit unit, Unit attacker) {
+        removeUnit(unit);
     }
 }
