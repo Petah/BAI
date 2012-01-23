@@ -25,7 +25,7 @@ local infos = {
 	},
 	{
 		key    = 'className',
-		value  = 'org.petah.spring.bai.AI',
+		value  = 'org.petah.spring.bai.EventHandler',
 		desc   = 'fully qualified name of a class that implements interface com.springrts.ai.AI',
 	},
 	{
