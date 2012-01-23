@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import org.petah.common.util.profiler.Profiler;
 import org.petah.spring.bai.delegate.GlobalDelegate;
+import org.petah.spring.bai.log.Log;
 
 /**
  *
@@ -46,6 +47,7 @@ public class UnitInfo implements Serializable {
 
     // Static methods
     public static void init() {
+        Log.entry(UnitInfo.class, "init");
         // Parse config file
         new ConfigReader().parse();
         // Load unit defs

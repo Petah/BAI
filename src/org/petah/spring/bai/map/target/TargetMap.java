@@ -57,7 +57,7 @@ public class TargetMap extends UpdateAdapter implements UpdateEventListener {
      * Updates the target map periodically.
      * @param frame the current frame
      */
-    public int update(int frame) {
+    public void update(int frame) {
         if (nextUpdate <= frame) {
             nextUpdate = frame + updateTime.getValue();
             if (updateFuture == null || updateFuture.isDone()) {
@@ -69,7 +69,6 @@ public class TargetMap extends UpdateAdapter implements UpdateEventListener {
                 });
             }
         }
-        return AIReturnCode.NORMAL;
     }
 
     private void update() {

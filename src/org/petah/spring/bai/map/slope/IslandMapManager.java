@@ -30,7 +30,7 @@ public class IslandMapManager {
             if (def.getSpeed() > 0) {
                 if (def.getMoveData() != null) {
                     if (!slopes.containsKey(def.getMoveData())) {
-                        slopes.put(def.getMoveData(), new ArrayList<String>());
+                        slopes.put(GlobalDelegate.getCachedMoveData(def.getMoveData()), new ArrayList<String>());
                     }
                     slopes.get(def.getMoveData()).add(def.getHumanName());
                 }
